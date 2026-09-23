@@ -77,4 +77,16 @@ parameter DEPTH = 16)
         .parity_err(parity_err)                         ,
         .overrun_err(overrun_err))			;
 
+// PAD
+	wire in_rx;
+	wire out_tx;
+
+	PADDI u_pad_uart_rx (
+	.PAD(rx),
+	.Y(in_rx));
+
+	PADDO u_pad_uart_tx (
+	.A(out_tx),
+	.PAD(tx));
+
 endmodule

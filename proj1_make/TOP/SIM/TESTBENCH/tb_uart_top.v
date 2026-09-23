@@ -31,25 +31,34 @@ module tb_uart_top;
 	uart_top #(.FPGA_CLK(FPGA_CLK)	      	      ,
 	           .BAUD_RATE(BAUD_RATE)	      ,
 		   .DATA_WIDTH(DATA_WIDTH)	      ,
-	           .DEPTH(DEPTH))      dut	      (	
-         .clk(clk)                                    ,
-         .rst_n(rst_n)                                ,
-         .tx_data(tx_data)                            ,
-         .tx_valid(tx_valid)                          ,
-         .rx(tx_line)                                 ,
-         .rx_ready(rx_ready)                          ,
-         .rx_valid(rx_valid)                          ,
-         .rx_data(rx_data)                            ,
-         .rx_full(rx_full)                            ,
-         .rx_empty(rx_empty)                          ,
-         .frame_err(frame_err)                        ,
-         .parity_err(parity_err)                      ,
-         .overrun_err(overrun_err)                    ,
-         .tx_ready(tx_ready)                          ,
-         .tx_full(tx_full)                            ,
-         .tx_empty(tx_empty)                          ,
-         .tx(tx_line))				      ;
-
+	           .DEPTH(DEPTH))      
+	dut	      (	
+        .clk			(clk)                   ,
+        .rst_n			(rst_n)                 ,
+        .tx_data		(tx_data)               ,
+        .tx_valid		(tx_valid)              ,
+        .rx			(tx_line)               ,
+        .rx_ready		(rx_ready)              ,
+        .rx_valid		(rx_valid)              ,
+        .rx_data		(rx_data)               ,
+        .rx_full		(rx_full)               ,
+        .rx_empty		(rx_empty)              ,
+        .frame_err		(frame_err)             ,
+        .parity_err		(parity_err)            ,
+        .overrun_err		(overrun_err)           ,
+        .tx_ready		(tx_ready)              ,
+        .tx_full		(tx_full)               ,
+        .tx_empty		(tx_empty)              ,
+        .tx			(tx_lIne))		;
+	
+	// function_sim
+	initial begin
+		`ifdef function_sim
+		$dumpfile("DUMP/uart_top.vcd");
+		$dumpvars(0, tb_uart_top);
+		`endif
+	end
+	
 	initial begin
 		clk = 0				      ;
 		forever #5 clk = ~clk		      ;		
@@ -63,7 +72,7 @@ module tb_uart_top;
                 repeat (5) @(posedge clk)             ;
                 rst_n    = 1'b1                       ;
                 repeat (5) @(posedge clk)             ;
-/* 		
+	
 		//case1
 		while (!tx_ready) 
 		@(posedge clk)                        ;
@@ -81,7 +90,7 @@ module tb_uart_top;
                         repeat (2) @(posedge clk)                       ;
                 end
                 repeat (2*BIT_PERIOD) @(posedge clk)                    ;
- 		
+/* 		
 		//case2
 		for (i = 0; i < 3; i = i + 1) begin
                         while (!tx_ready) @(posedge clk)                ;
@@ -164,7 +173,7 @@ module tb_uart_top;
                         repeat (2) @(posedge clk)                       ;
                 end
                 repeat (2*BIT_PERIOD) @(posedge clk)                    ;
- */		
+ 		
 		//case5
 		for (i = 0; i < DEPTH + 1; i = i + 1) begin
                         @(posedge clk)                                  ;
@@ -184,7 +193,7 @@ module tb_uart_top;
                         repeat (2) @(posedge clk)                       ;
                 end
                 repeat (2*BIT_PERIOD) @(posedge clk)                    ;
- 
+ */
                 $finish                                                 ;
 	end
 
