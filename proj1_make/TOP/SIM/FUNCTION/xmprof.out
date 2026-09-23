@@ -529,7 +529,7 @@ xmelab options:
 
 Profiled Intervals: 
  #Id                                PBSR Info               #start                  #stop             #start_CPU          #stop_CPU               #CPS
-[ 1]                                                          0 NS   to           2505 NS                 0.1029             0.1126        256187.3594
+[ 1]                                                          0 NS   to           2505 NS                 0.1024             0.1122        256659.8361
 
 Memory Usage - 46.8M program + 60.6M data + 2.0M profile = 109.4M total
 CPU Usage - 0.1s system + 0.3s user = 0.4s total (99.5% cpu)
@@ -543,10 +543,9 @@ Derived hit_rate: 409 hps
 Stream Counts (4 hits total)
 ------------------------------------------------------------
 %hits #hits  #inst  name
+ 50.0     2 [     ] outside engine
  25.0     1 [     ] simulation setup time 
- 25.0     1 [     ] outside engine
- 25.0     1 [     ] ssslib snare support
- 25.0     1 [     ] VCD Waveform Dump Setup
+ 25.0     1 [     ] VCD Waveform Dump
 
 ------------------------------------------------------------
 Most Active Modules (behavioral)
@@ -557,15 +556,14 @@ Most Active Modules (behavioral)
 Stream Type Summary Counts (4 hits total)
 ------------------------------------------------------------
 %hits #hits  #inst  name
+ 50.0     2 [     ] Outside engine 
  25.0     1 [     ] Waveform Dump 
- 25.0     1 [     ] Support for callbacks (or UI) 
- 25.0     1 [     ] Outside engine 
  25.0     1 [     ] Simulation Setup Time 
 
 ------------------------------------------------------------
 Technology-wise Summary Counts (4 hits total)
 ------------------------------------------------------------
 %hits #hits  name
- 50.0     2 Analysis 
- 50.0     2 Miscellaneous 
+ 75.0     3 Miscellaneous 
+ 25.0     1 Analysis 
 
