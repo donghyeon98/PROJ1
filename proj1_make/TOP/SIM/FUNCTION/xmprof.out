@@ -529,15 +529,15 @@ xmelab options:
 
 Profiled Intervals: 
  #Id                                PBSR Info               #start                  #stop             #start_CPU          #stop_CPU               #CPS
-[ 1]                                                          0 NS   to           2505 NS                 0.1024             0.1122        256659.8361
+[ 1]                                                          0 NS   to           2505 NS                 0.0996             0.1090        266631.1868
 
-Memory Usage - 46.8M program + 60.6M data + 2.0M profile = 109.4M total
+Memory Usage - 46.8M program + 60.5M data + 2.0M profile = 109.3M total
 CPU Usage - 0.1s system + 0.3s user = 0.4s total (99.5% cpu)
 
 License Acquisition Time - 0.0s
-Snapshot Loading: CPU Usage - 0.0s system + 0.1s user = 0.1s total (0.1s, 98.4% cpu)
+Snapshot Loading: CPU Usage - 0.0s system + 0.1s user = 0.1s total (0.1s, 98.5% cpu)
 
-Derived hit_rate: 409 hps
+Derived hit_rate: 425 hps
 
 ------------------------------------------------------------
 Stream Counts (4 hits total)
