@@ -1,7 +1,5 @@
-*.vcd
 *.fsdb
 *.wlf
-*.log
 *.rpt
 simv*
 csrc/
