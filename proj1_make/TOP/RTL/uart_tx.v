@@ -12,6 +12,7 @@ parameter DEPTH = 16)
 	tx_ready											,
 	tx_full												,
 	tx_empty											,
+	tx_done												,
 	tx
 )													;
 
@@ -23,8 +24,10 @@ parameter DEPTH = 16)
 	output tx_ready											;
 	output tx_full											;
 	output tx_empty											;
+	output tx_done											;
 	output tx											;
 
+	reg tx_done											;
 	reg tx												;
 	assign tx_ready = ~tx_full                      						;
 	
@@ -122,6 +125,11 @@ parameter DEPTH = 16)
 				default : tx <= 1'b1							;
 			endcase
 		end
+	end
+
+	always@(posedge clk or negedge rst_n) begin
+		if(!rst_n) tx_done <= 1'b0								;
+		else       tx_done <= (state == STOP) && baud_tick && tx_empty				;
 	end
 
 endmodule

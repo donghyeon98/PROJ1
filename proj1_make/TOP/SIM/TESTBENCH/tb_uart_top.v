@@ -6,50 +6,62 @@ module tb_uart_top;
 	parameter DATA_WIDTH = 8;
 	parameter DEPTH      = 16;
 
-	localparam OS_DIV     = FPGA_CLK / (BAUD_RATE * 16) ;
-        localparam BIT_PERIOD = OS_DIV * 16                 ;
+	localparam OS_DIV     = FPGA_CLK / (BAUD_RATE * 16) 	;
+        localparam BIT_PERIOD = OS_DIV * 16                 	;
 
-        reg clk                                       ;
-        reg rst_n                                     ;
-        reg [DATA_WIDTH-1:0] tx_data                  ;
-        reg tx_valid                                  ;
-        reg rx_ready                                  ;
-        wire rx_valid                                 ;
-        wire [DATA_WIDTH-1:0] rx_data                 ;
-        wire rx_full                                  ;
-        wire rx_empty                                 ;
-        wire frame_err                                ;
-        wire parity_err                               ;
-        wire overrun_err                              ;
-        wire tx_ready                                 ;
-        wire tx_full                                  ;
-        wire tx_empty                                 ;
-        wire tx_line                                  ;
+        reg clk                                       		;
+        reg rst_n                                     		;
+        reg [DATA_WIDTH-1:0] tx_data                  		;
+        reg tx_valid                                  		;
+        reg rx_ready                                  		;
+	reg [3:0] ier				      		;
+	reg lsr_rd				      		;
+	reg iir_rd						;
+	wire [3:0] iir						;
+	wire [3:0] lsr						;
+	wire irq						;
+        wire rx_valid                                 		;
+        wire [DATA_WIDTH-1:0] rx_data                 		;
+        wire rx_full                                  		;
+        wire rx_empty                                 		;
+        wire frame_err                                		;
+        wire parity_err                               		;
+        wire overrun_err                              		;
+        wire tx_ready                                 		;
+        wire tx_full                                  		;
+        wire tx_empty                                 		;
+        wire tx_line                                  		;
 
-	integer i				      ;
+	integer i				      		;
 
-	uart_top #(.FPGA_CLK(FPGA_CLK)	      	      ,
-	           .BAUD_RATE(BAUD_RATE)	      ,
-		   .DATA_WIDTH(DATA_WIDTH)	      ,
+	uart_top #(.FPGA_CLK(FPGA_CLK)	      	      		,
+	           .BAUD_RATE(BAUD_RATE)	      		,
+		   .DATA_WIDTH(DATA_WIDTH)	      		,
 	           .DEPTH(DEPTH))      
 	dut	      (	
-        .clk			(clk)                   ,
-        .rst_n			(rst_n)                 ,
-        .tx_data		(tx_data)               ,
-        .tx_valid		(tx_valid)              ,
-        .rx			(tx_line)               ,
-        .rx_ready		(rx_ready)              ,
-        .rx_valid		(rx_valid)              ,
-        .rx_data		(rx_data)               ,
-        .rx_full		(rx_full)               ,
-        .rx_empty		(rx_empty)              ,
-        .frame_err		(frame_err)             ,
-        .parity_err		(parity_err)            ,
-        .overrun_err		(overrun_err)           ,
-        .tx_ready		(tx_ready)              ,
-        .tx_full		(tx_full)               ,
-        .tx_empty		(tx_empty)              ,
-        .tx			(tx_lIne))		;
+        .clk			(clk)                   	,
+        .rst_n			(rst_n)                 	,
+        .tx_data		(tx_data)               	,
+        .tx_valid		(tx_valid)              	,
+        .rx			(tx_line)               	,
+        .rx_ready		(rx_ready)              	,
+	.ier			(ier)				,
+	.lsr_rd			(lsr_rd)			,
+	.iir_rd			(iir_rd)			,
+	.iir			(iir)				,
+	.lsr			(lsr)				,
+	.irq			(irq)				,
+        .rx_valid		(rx_valid)              	,
+        .rx_data		(rx_data)               	,
+        .rx_full		(rx_full)               	,
+        .rx_empty		(rx_empty)              	,
+        .frame_err		(frame_err)             	,
+        .parity_err		(parity_err)            	,
+        .overrun_err		(overrun_err)           	,
+        .tx_ready		(tx_ready)              	,
+        .tx_full		(tx_full)               	,
+        .tx_empty		(tx_empty)              	,
+        .tx			(tx_lIne))			;
 	
 	// function_sim
 	initial begin

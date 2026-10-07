@@ -40,7 +40,8 @@ module uart_rx #(parameter DATA_WIDTH = 8										,
 	assign rx_valid = ~rx_empty											;
 
 	Sync_FIFO #(.DATA_WIDTH(DATA_WIDTH)										, 
-		    .DEPTH(DEPTH)) rx_fifo(
+		    .DEPTH(DEPTH)) 
+	rx_fifo(
 	.clk(clk)													,
 	.rst_n(rst_n)													,
 	.wr_en(fifo_wr_en)												,
@@ -74,9 +75,9 @@ module uart_rx #(parameter DATA_WIDTH = 8										,
 
 	always@(posedge clk or negedge rst_n) begin
 		if(!rst_n) begin
-			rx_sync0 <= 0											;
-			rx_sync1 <= 0											;
-			rx_sync2 <= 0											;
+			rx_sync0 <= 1'b1										;
+			rx_sync1 <= 1'b1										;
+			rx_sync2 <= 1'b1										;
 		end
 		else begin
 			rx_sync0 <= rx											;

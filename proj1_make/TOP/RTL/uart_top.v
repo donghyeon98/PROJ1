@@ -12,6 +12,12 @@ parameter DEPTH = 16)
 	tx_valid					,
 	rx						,
 	rx_ready					,
+	ier						,
+	lsr_rd						,
+	iir_rd						,
+	iir						,
+	lsr						,
+	irq						,
 	rx_valid					,
 	rx_data						,
 	rx_full						,
@@ -30,7 +36,13 @@ parameter DEPTH = 16)
 	input [DATA_WIDTH-1:0] tx_data                  ;
         input tx_valid                                  ;
         input rx                                        ;
-        input rx_ready                                  ;	
+        input rx_ready                                  ;
+	input [3:0] ier					;
+	input lsr_rd					;
+	input iir_rd					;
+	output [3:0] iir				;
+	output [3:0] lsr				;
+	output irq					;	
         output rx_valid                                 ;
         output [DATA_WIDTH-1:0] rx_data                 ;
         output rx_full                                  ;
@@ -45,6 +57,8 @@ parameter DEPTH = 16)
 
 	wire os_tick					;
 	wire baud_tick					;
+	wire in_rx					;
+	wire out_tx					;
 
 	baud_rate_gen #(.FPGA_CLK(FPGA_CLK), .BAUD_RATE(BAUD_RATE)) baud(     
 	.clk(clk)					,
@@ -61,13 +75,13 @@ parameter DEPTH = 16)
         .tx_ready(tx_ready)                             ,
         .tx_full(tx_full)                               ,
         .tx_empty(tx_empty)                             ,
-        .tx(tx))					;
+        .tx(out_tx))					;
 
 	uart_rx #(.DATA_WIDTH(DATA_WIDTH), .DEPTH(DEPTH)) u_rx(
 	.clk(clk)                                	,
         .rst_n(rst_n)                            	,
         .os_tick(os_tick)                        	,
-        .rx(rx)                                      	,
+        .rx(in_rx)                                      ,
         .rx_ready(rx_ready)                             ,
         .rx_valid(rx_valid)                             ,
         .rx_data(rx_data)                               ,
@@ -77,16 +91,34 @@ parameter DEPTH = 16)
         .parity_err(parity_err)                         ,
         .overrun_err(overrun_err))			;
 
-// PAD
-	wire in_rx;
-	wire out_tx;
+	uart_irq u_irq(
+	.clk(clk)					,
+	.rst_n(rst_n)					,
+	.rx_valid(rx_valid)				,
+	.tx_empty(tx_empty)				,
+	.frame_err(frame_err)				,
+	.parity_err(parity_err)				,	
+	.overrun_err(overrun_err)			,
+	.ier(ier)					,
+	.lsr_rd(lsr_rd)					,
+	.thr_wr(tx_valid & tx_ready)			,
+	.iir_rd(iir_rd)					,
+	.iir(iir)					,
+	.lsr(lsr)					,
+	.irq(irq))					;
 
+// PAD
+`ifdef NO_PAD
+	assign in_rx = rx				;
+	assign tx    = out_tx				;
+`else
 	PADDI u_pad_uart_rx (
-	.PAD(rx),
-	.Y(in_rx));
+	.PAD(rx)					,
+	.Y(in_rx))					;
 
 	PADDO u_pad_uart_tx (
-	.A(out_tx),
-	.PAD(tx));
+	.A(out_tx)					,
+	.PAD(tx))					;
+`endif
 
 endmodule
