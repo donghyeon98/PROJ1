@@ -1,5 +1,5 @@
 xrun(64): 22.03-s012: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	22.03-s012: Started on Sep 23, 2026 at 16:55:42 KST
+TOOL:	xrun(64)	22.03-s012: Started on Oct 13, 2026 at 12:05:11 KST
 xrun
 	-64bit
 	+max_err_count+50
@@ -1069,6 +1069,11 @@ file: /GPDK045/digital/gsclib045_all_v4.4/gsclib045_svt_v4.4/gsclib045/verilog/s
 		errors: 0, warnings: 0
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
+	uart_tx #(.DATA_WIDTH(DATA_WIDTH), .DEPTH(DEPTH)) u_tx(
+	                                                     |
+xmelab: *W,CUVWSP (/home/hah001/PROJ1/proj1_make/TOP/RTL/uart_top.v,71|54): 1 output port was not connected:
+xmelab: (/home/hah001/PROJ1/proj1_make/TOP/RTL/uart_tx.v,15): tx_done
+
 	Top level design units:
 		tb_uart_top
 		PADDB
@@ -1872,12 +1877,12 @@ file: /GPDK045/digital/gsclib045_all_v4.4/gsclib045_svt_v4.4/gsclib045/verilog/s
 			streams:   0, words:     0
 		worklib.DFFHQX1:v <0x391e0df2>
 			streams:   0, words:     0
-		worklib.uart_rx:v <0x7619eb40>
-			streams:  29, words: 11412
+		worklib.uart_rx:v <0x27d949db>
+			streams:  29, words: 11445
 		worklib.Sync_FIFO:v <0x575839ba>
 			streams:   8, words:  2599
-		worklib.uart_tx:v <0x76e259aa>
-			streams:  13, words:  5721
+		worklib.uart_tx:v <0x7333c0af>
+			streams:  15, words:  6206
 		worklib.baud_rate_gen:v <0x3d7f68c9>
 			streams:   7, words:  2402
 		worklib.tb_uart_top:v <0x12cfc361>
@@ -1890,10 +1895,10 @@ file: /GPDK045/digital/gsclib045_all_v4.4/gsclib045_svt_v4.4/gsclib045/verilog/s
 		UDPs:                     272      18
 		Primitives:              1852       7
 		Timing outputs:           578     420
-		Registers:                191     205
-		Scalar wires:            2917       -
+		Registers:                192     206
+		Scalar wires:            2915       -
 		Vectored wires:             4       -
-		Always blocks:             14      11
+		Always blocks:             15      12
 		Initial blocks:             3       3
 		Cont. assignments:          8       9
 		Pseudo assignments:        10      10
@@ -1905,6 +1910,6 @@ Loading snapshot worklib.tb_uart_top:v .................... Done
 xcelium> source /tools/cadence/XCELIUM2203/tools/xcelium/files/xmsimrc
 xcelium> run
 Simulation complete via $finish(1) at time 2505 NS + 0
-../TESTBENCH/tb_uart_top.v:197                 $finish                                                 ;
+../TESTBENCH/tb_uart_top.v:211                 $finish                                                 ;
 xcelium> exit
-TOOL:	xrun(64)	22.03-s012: Exiting on Sep 23, 2026 at 16:55:43 KST  (total: 00:00:01)
+TOOL:	xrun(64)	22.03-s012: Exiting on Oct 13, 2026 at 12:05:13 KST  (total: 00:00:02)

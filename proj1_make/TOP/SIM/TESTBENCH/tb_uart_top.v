@@ -14,12 +14,13 @@ module tb_uart_top;
         reg [DATA_WIDTH-1:0] tx_data                  		;
         reg tx_valid                                  		;
         reg rx_ready                                  		;
-	reg [3:0] ier				      		;
+/*	reg [3:0] ier				      		;
 	reg lsr_rd				      		;
 	reg iir_rd						;
 	wire [3:0] iir						;
 	wire [3:0] lsr						;
 	wire irq						;
+*/
         wire rx_valid                                 		;
         wire [DATA_WIDTH-1:0] rx_data                 		;
         wire rx_full                                  		;
@@ -45,12 +46,13 @@ module tb_uart_top;
         .tx_valid		(tx_valid)              	,
         .rx			(tx_line)               	,
         .rx_ready		(rx_ready)              	,
-	.ier			(ier)				,
+/*	.ier			(ier)				,
 	.lsr_rd			(lsr_rd)			,
 	.iir_rd			(iir_rd)			,
 	.iir			(iir)				,
 	.lsr			(lsr)				,
 	.irq			(irq)				,
+*/
         .rx_valid		(rx_valid)              	,
         .rx_data		(rx_data)               	,
         .rx_full		(rx_full)               	,

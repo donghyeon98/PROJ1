@@ -12,12 +12,6 @@ parameter DEPTH = 16)
 	tx_valid					,
 	rx						,
 	rx_ready					,
-	ier						,
-	lsr_rd						,
-	iir_rd						,
-	iir						,
-	lsr						,
-	irq						,
 	rx_valid					,
 	rx_data						,
 	rx_full						,
@@ -36,13 +30,7 @@ parameter DEPTH = 16)
 	input [DATA_WIDTH-1:0] tx_data                  ;
         input tx_valid                                  ;
         input rx                                        ;
-        input rx_ready                                  ;
-	input [3:0] ier					;
-	input lsr_rd					;
-	input iir_rd					;
-	output [3:0] iir				;
-	output [3:0] lsr				;
-	output irq					;	
+        input rx_ready                                  ;	
         output rx_valid                                 ;
         output [DATA_WIDTH-1:0] rx_data                 ;
         output rx_full                                  ;
@@ -90,22 +78,6 @@ parameter DEPTH = 16)
         .frame_err(frame_err)                           ,
         .parity_err(parity_err)                         ,
         .overrun_err(overrun_err))			;
-
-	uart_irq u_irq(
-	.clk(clk)					,
-	.rst_n(rst_n)					,
-	.rx_valid(rx_valid)				,
-	.tx_empty(tx_empty)				,
-	.frame_err(frame_err)				,
-	.parity_err(parity_err)				,	
-	.overrun_err(overrun_err)			,
-	.ier(ier)					,
-	.lsr_rd(lsr_rd)					,
-	.thr_wr(tx_valid & tx_ready)			,
-	.iir_rd(iir_rd)					,
-	.iir(iir)					,
-	.lsr(lsr)					,
-	.irq(irq))					;
 
 // PAD
 `ifdef NO_PAD
