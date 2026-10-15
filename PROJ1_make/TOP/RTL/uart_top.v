@@ -47,6 +47,7 @@ parameter DEPTH = 16)
 	wire baud_tick					;
 	wire in_rx					;
 	wire out_tx					;
+	wire tx_done					;
 
 	baud_rate_gen #(.FPGA_CLK(FPGA_CLK), .BAUD_RATE(BAUD_RATE)) baud(     
 	.clk(clk)					,
@@ -63,6 +64,7 @@ parameter DEPTH = 16)
         .tx_ready(tx_ready)                             ,
         .tx_full(tx_full)                               ,
         .tx_empty(tx_empty)                             ,
+	.tx_done(tx_done)				,
         .tx(out_tx))					;
 
 	uart_rx #(.DATA_WIDTH(DATA_WIDTH), .DEPTH(DEPTH)) u_rx(

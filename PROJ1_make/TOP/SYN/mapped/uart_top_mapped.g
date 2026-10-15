@@ -1,6 +1,6 @@
 ######################################################################
 
-# Created by Genus(TM) Synthesis Solution 22.17-s071_1 on Thu Oct 15 09:06:22 KST 2026
+# Created by Genus(TM) Synthesis Solution 22.17-s071_1 on Thu Oct 15 18:06:42 KST 2026
 
 # This file contains the Genus script for design:uart_top
 
@@ -18,7 +18,7 @@ set_db -quiet phys_route_time_out 120.0
 set_db -quiet db_units 2000
 set_db -quiet capacitance_per_unit_length_mmmc {}
 set_db -quiet resistance_per_unit_length_mmmc {}
-set_db -quiet runtime_by_stage {{PBS_Generic-Start 0 19 0.0 16.98082} {to_generic 5 24 4 22} {first_condense 3 28 4 27} {PBS_Generic_Opt-Post 9 28 9.868186999999999 26.849007} {{PBS_Generic-Postgen HBO Optimizations} 0 28 0.0 26.849007} {PBS_TechMap-Start 0 31 0.0 27.800561} {{PBS_TechMap-Premap HBO Optimizations} 0 31 0.0 27.800561} {second_condense 3 34 3 33} {reify 5 39 7 40} {global_incr_map 0 39 0 41} {{PBS_Techmap-Global Mapping} 8 39 8.833316 36.633877} {{PBS_TechMap-Datapath Postmap Operations} 2 41 2.0 38.633877} {{PBS_TechMap-Postmap HBO Optimizations} 0 41 -0.015883999999999787 38.617993} {{PBS_TechMap-Postmap Clock Gating} 0 41 0.0 38.617993} {{PBS_TechMap-Postmap Cleanup} 1 42 -0.016868000000002326 38.601124999999996} {PBS_Techmap-Post_MBCI 0 42 0.0 38.601124999999996} {incr_opt 2 46 2 46} }
+set_db -quiet runtime_by_stage {{PBS_Generic-Start 0 20 0.0 16.980148} {to_generic 5 25 4 22} {first_condense 4 29 4 28} {PBS_Generic_Opt-Post 9 29 8.732717000000001 26.712865} {{PBS_Generic-Postgen HBO Optimizations} 0 29 0.0 26.712865} {PBS_TechMap-Start 0 31 0.0 28.661853} {{PBS_TechMap-Premap HBO Optimizations} 0 31 0.0 28.661853} {second_condense 2 34 3 34} {reify 5 39 6 41} {global_incr_map 1 40 0 42} {{PBS_Techmap-Global Mapping} 9 40 8.824378000000003 37.486231000000004} {{PBS_TechMap-Datapath Postmap Operations} 2 42 2.0 39.486231000000004} {{PBS_TechMap-Postmap HBO Optimizations} 0 42 -0.01669800000000521 39.469533} {{PBS_TechMap-Postmap Clock Gating} 0 42 0.0 39.469533} {{PBS_TechMap-Postmap Cleanup} 0 42 -0.01768899999999718 39.451844} {PBS_Techmap-Post_MBCI 0 42 0.0 39.451844} {incr_opt 3 47 2 47} }
 set_db -quiet timing_adjust_tns_of_complex_flops false
 set_db -quiet hdl_array_naming_style %s_%d
 set_db -quiet tinfo_tstamp_file .rs_hah001.tstamp
@@ -336,7 +336,7 @@ set_db -quiet dft_scan_style muxed_scan
 set_db -quiet dft_scanbit_waveform_analysis false
 # END DFT SECTION
 set_db -quiet design:uart_top .seq_reason_deleted_internal {{u_tx/tx_done_reg unloaded u_tx/tx_done}}
-set_db -quiet design:uart_top .qos_by_stage {{to_generic {wns -11111111} {tns -111111111} {vep -111111111} {area 34022} {cell_count 922} {utilization  0.00} {runtime 5 24 4 22} }{first_condense {wns -11111111} {tns -111111111} {vep -111111111} {area 34383} {cell_count 1328} {utilization  0.00} {runtime 3 28 4 27} }{second_condense {wns -11111111} {tns -111111111} {vep -111111111} {area 34383} {cell_count 1328} {utilization  0.00} {runtime 3 34 3 33} }{reify {wns 5420} {tns 0} {vep 0} {area 32578} {cell_count 914} {utilization  0.00} {runtime 5 39 7 40} }{global_incr_map {wns 5420} {tns 0} {vep 0} {area 32425} {cell_count 849} {utilization  0.00} {runtime 0 39 0 41} }{incr_opt {wns 214748365} {tns 0} {vep 0} {area 32415} {cell_count 833} {utilization  0.00} {runtime 2 46 2 46} }}
+set_db -quiet design:uart_top .qos_by_stage {{to_generic {wns -11111111} {tns -111111111} {vep -111111111} {area 34022} {cell_count 922} {utilization  0.00} {runtime 5 25 4 22} }{first_condense {wns -11111111} {tns -111111111} {vep -111111111} {area 34383} {cell_count 1328} {utilization  0.00} {runtime 4 29 4 28} }{second_condense {wns -11111111} {tns -111111111} {vep -111111111} {area 34383} {cell_count 1328} {utilization  0.00} {runtime 2 34 3 34} }{reify {wns 5420} {tns 0} {vep 0} {area 32578} {cell_count 914} {utilization  0.00} {runtime 5 39 6 41} }{global_incr_map {wns 5420} {tns 0} {vep 0} {area 32425} {cell_count 849} {utilization  0.00} {runtime 1 40 0 42} }{incr_opt {wns 214748365} {tns 0} {vep 0} {area 32415} {cell_count 833} {utilization  0.00} {runtime 3 47 2 47} }}
 set_db -quiet design:uart_top .seq_mbci_coverage 0.0
 set_db -quiet design:uart_top .hdl_filelist {{default -v2001 {SYNTHESIS} {../RTL/uart_top.v ../RTL/uart_tx.v ../RTL/uart_rx.v ../RTL/baud_rate_gen.v ../RTL/Sync_FIFO.v} {../RTL} {}}}
 set_db -quiet design:uart_top .verification_directory fv/uart_top
@@ -2227,7 +2227,7 @@ set_db -quiet source_verbose true
 ##
 ## Written by Genus(TM) Synthesis Solution version 22.17-s071_1
 ## flowkit v22.15-s003_1
-## Written on 09:06:23 15-Oct 2026
+## Written on 18:06:43 15-Oct 2026
 #############################################################
 #####   Flow Definitions   ##################################
 
