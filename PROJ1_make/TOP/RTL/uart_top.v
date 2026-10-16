@@ -12,6 +12,14 @@ parameter DEPTH = 16)
 	tx_valid					,
 	rx						,
 	rx_ready					,
+	tx_done						,
+	ier_we                                  	,
+        ier_wdata                               	,
+        isr_clr_we                              	,
+        isr_clr_data                            	,
+        ier                                     	,
+        isr                                     	,
+        irq						,
 	rx_valid					,
 	rx_data						,
 	rx_full						,
@@ -25,12 +33,20 @@ parameter DEPTH = 16)
 	tx						
 )							;
 
-	input clk					;
-	input rst_n					;
-	input [DATA_WIDTH-1:0] tx_data                  ;
-        input tx_valid                                  ;
-        input rx                                        ;
-        input rx_ready                                  ;	
+	input  clk					;
+	input  rst_n					;
+	input  [DATA_WIDTH-1:0] tx_data                 ;
+        input  tx_valid                                 ;
+        input  rx                                       ;
+        input  rx_ready                                 ;
+	input  tx_done					;	
+	input  ier_we                     		;
+        input  [5:0] ier_wdata                  	;
+        input  isr_clr_we                 		;
+	input  [5:0] isr_clr_data               	;
+        output [5:0] ier                        	;
+        output [5:0] isr                        	;
+        output irq                        		;
         output rx_valid                                 ;
         output [DATA_WIDTH-1:0] rx_data                 ;
         output rx_full                                  ;
@@ -50,36 +66,57 @@ parameter DEPTH = 16)
 	wire tx_done					;
 
 	baud_rate_gen #(.FPGA_CLK(FPGA_CLK), .BAUD_RATE(BAUD_RATE)) baud(     
-	.clk(clk)					,
-        .rst_n(rst_n)					,
-        .os_tick(os_tick)				,
-        .baud_tick(baud_tick))				;
+	.clk		(clk)				,
+        .rst_n		(rst_n)				,
+        .os_tick	(os_tick)			,
+        .baud_tick	(baud_tick)
+	)						;
 
 	uart_tx #(.DATA_WIDTH(DATA_WIDTH), .DEPTH(DEPTH)) u_tx(
-	.clk(clk)					,
-	.rst_n(rst_n)					,
-	.baud_tick(baud_tick)				,
-	.tx_data(tx_data)				,
-	.tx_valid(tx_valid)                             ,
-        .tx_ready(tx_ready)                             ,
-        .tx_full(tx_full)                               ,
-        .tx_empty(tx_empty)                             ,
-	.tx_done(tx_done)				,
-        .tx(out_tx))					;
+	.clk		(clk)				,
+	.rst_n		(rst_n)				,
+	.baud_tick	(baud_tick)			,
+	.tx_data	(tx_data)			,
+	.tx_valid	(tx_valid)                      ,
+        .tx_ready	(tx_ready)                      ,
+        .tx_full	(tx_full)                       ,
+        .tx_empty	(tx_empty)                      ,
+	.tx_done	(tx_done)			,
+        .tx		(out_tx)
+	)						;
 
 	uart_rx #(.DATA_WIDTH(DATA_WIDTH), .DEPTH(DEPTH)) u_rx(
-	.clk(clk)                                	,
-        .rst_n(rst_n)                            	,
-        .os_tick(os_tick)                        	,
-        .rx(in_rx)                                      ,
-        .rx_ready(rx_ready)                             ,
-        .rx_valid(rx_valid)                             ,
-        .rx_data(rx_data)                               ,
-        .rx_full(rx_full)                               ,
-        .rx_empty(rx_empty)                             ,
-        .frame_err(frame_err)                           ,
-        .parity_err(parity_err)                         ,
-        .overrun_err(overrun_err))			;
+	.clk		(clk)                           ,
+        .rst_n		(rst_n)                         ,
+        .os_tick	(os_tick)                       ,
+        .rx		(in_rx)                         ,
+        .rx_ready	(rx_ready)                      ,
+        .rx_valid	(rx_valid)                      ,
+        .rx_data	(rx_data)                       ,
+        .rx_full	(rx_full)                       ,
+        .rx_empty	(rx_empty)                      ,
+        .frame_err	(frame_err)                     ,
+        .parity_err	(parity_err)                    ,
+        .overrun_err	(overrun_err))			;
+
+	uart_irq u_irq(
+        .clk		(clk)                           ,
+        .rst_n          (rst_n)                         ,
+        .rx_empty       (rx_empty)                      ,
+        .tx_empty       (tx_empty)                      ,
+        .tx_done        (tx_done)                       ,
+        .frame_err      (frame_err)                     ,
+        .parity_err     (parity_err)                    ,
+        .overrun_err    (overrun_err)                   ,
+        .ier_we         (ier_we)                        ,
+        .ier_wdata      (ier_wdata)                     ,
+        .isr_clr_we     (isr_clr_we)                    ,
+        .isr_clr_data   (isr_clr_data)                  ,
+        .ier            (ier)                           ,
+        .isr            (isr)                           ,
+        .irq		(irq)
+)                                                       ;
+
 
 // PAD
 `ifdef NO_PAD

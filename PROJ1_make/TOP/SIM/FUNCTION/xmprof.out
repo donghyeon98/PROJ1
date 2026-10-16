@@ -529,23 +529,21 @@ xmelab options:
 
 Profiled Intervals: 
  #Id                                PBSR Info               #start                  #stop             #start_CPU          #stop_CPU               #CPS
-[ 1]                                                          0 NS   to           2505 NS                 0.1000             0.1095        263573.2323
+[ 1]                                                          0 NS   to              0 NS                 0.1439            29.3956             0.0000
 
-Memory Usage - 46.8M program + 60.6M data + 2.0M profile = 109.4M total
-CPU Usage - 0.1s system + 0.3s user = 0.4s total (99.5% cpu)
+Memory Usage - 46.8M program + 62.5M data + 2.0M profile = 111.2M total
+CPU Usage - 20.8s system + 8.9s user = 29.7s total (1.9% cpu)
 
 License Acquisition Time - 0.0s
-Snapshot Loading: CPU Usage - 0.0s system + 0.0s user = 0.1s total (0.1s, 98.5% cpu)
+Snapshot Loading: CPU Usage - 0.1s system + 0.1s user = 0.1s total (9.1s, 1.4% cpu)
 
-Derived hit_rate: 420 hps
+Derived hit_rate: 452 hps
 
 ------------------------------------------------------------
-Stream Counts (4 hits total)
+Stream Counts (13240 hits total)
 ------------------------------------------------------------
 %hits #hits  #inst  name
- 50.0     2 [     ] outside engine
- 25.0     1 [     ] simulation setup time 
- 25.0     1 [     ] VCD Waveform Dump
+ 99.9 13223 [     ] outside engine
 
 ------------------------------------------------------------
 Most Active Modules (behavioral)
@@ -553,17 +551,17 @@ Most Active Modules (behavioral)
 %hits #hits  #inst  name
 
 ------------------------------------------------------------
-Stream Type Summary Counts (4 hits total)
+Stream Type Summary Counts (13240 hits total)
 ------------------------------------------------------------
 %hits #hits  #inst  name
- 50.0     2 [     ] Outside engine 
- 25.0     1 [     ] Waveform Dump 
- 25.0     1 [     ] Simulation Setup Time 
+ 99.9 13223 [     ] Outside engine 
+  0.1    15 [     ] HDL C interface 
+  0.0     2 [     ] Simulation Setup Time 
 
 ------------------------------------------------------------
-Technology-wise Summary Counts (4 hits total)
+Technology-wise Summary Counts (13240 hits total)
 ------------------------------------------------------------
 %hits #hits  name
- 75.0     3 Miscellaneous 
- 25.0     1 Analysis 
+ 99.9 13225 Miscellaneous 
+  0.1    15 Analysis 
 

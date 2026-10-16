@@ -1,5 +1,5 @@
 xrun(64): 22.03-s012: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	22.03-s012: Started on Oct 15, 2026 at 10:44:57 KST
+TOOL:	xrun(64)	22.03-s012: Started on Oct 16, 2026 at 11:32:51 KST
 xrun
 	-64bit
 	+max_err_count+50
@@ -7,12 +7,14 @@ xrun
 	-access +rwc
 	-profile
 	-profthread
+	-gui
 	+libext+.v
 	../TESTBENCH/tb_uart_top.v
 	../../RTL/Sync_FIFO.v
 	../../RTL/baud_rate_gen.v
 	../../RTL/uart_tx.v
 	../../RTL/uart_rx.v
+	../../RTL/uart_irq.v
 	../../RTL/uart_top.v
 	/GPDK045/digital/giolib045_v3.5/vlog/pads_FF_s1vg.v
 	/GPDK045/digital/gsclib045_all_v4.4/gsclib045_svt_v4.4/gsclib045/verilog/slow_vdd1v0_basicCells.v
@@ -31,6 +33,9 @@ file: ../../RTL/uart_tx.v
 		errors: 0, warnings: 0
 file: ../../RTL/uart_rx.v
 	module worklib.uart_rx:v
+		errors: 0, warnings: 0
+file: ../../RTL/uart_irq.v
+	module worklib.uart_irq:v
 		errors: 0, warnings: 0
 file: ../../RTL/uart_top.v
 	module worklib.uart_top:v
@@ -1872,39 +1877,44 @@ file: /GPDK045/digital/gsclib045_all_v4.4/gsclib045_svt_v4.4/gsclib045/verilog/s
 			streams:   0, words:     0
 		worklib.DFFHQX1:v <0x391e0df2>
 			streams:   0, words:     0
+		worklib.uart_irq:v <0x562217f1>
+			streams:  11, words:  2813
 		worklib.uart_rx:v <0x27d949db>
 			streams:  29, words: 11445
 		worklib.Sync_FIFO:v <0x575839ba>
 			streams:   8, words:  2599
-		worklib.uart_tx:v <0x2f102b78>
-			streams:  15, words:  6288
 		worklib.baud_rate_gen:v <0x3d7f68c9>
 			streams:   7, words:  2402
-		worklib.tb_uart_top:v <0x12cfc361>
-			streams:  11, words:  7515
+		worklib.tb_uart_top:v <0x55db4f92>
+			streams:  24, words: 30736
+		worklib.uart_tx:v <0x696b51de>
+			streams:  21, words:  7808
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		                    Instances  Unique
-		Modules:                  504     503
+		Modules:                  505     504
 		UDPs:                     272      18
 		Primitives:              1852       7
 		Timing outputs:           578     420
-		Registers:                192     206
-		Scalar wires:            2916       -
-		Vectored wires:             4       -
-		Always blocks:             15      12
+		Registers:                203     217
+		Scalar wires:            2918       -
+		Vectored wires:            11       -
+		Always blocks:             19      16
 		Initial blocks:             3       3
-		Cont. assignments:          8       9
-		Pseudo assignments:        10      10
+		Cont. assignments:         11      13
+		Pseudo assignments:        14      14
 		Timing checks:           1976       -
 		Delayed tcheck signals:   536     536
 		Simulation timescale:     1ps
 	Writing initial simulation snapshot: worklib.tb_uart_top:v
-Loading snapshot worklib.tb_uart_top:v .................... Done
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
 xcelium> source /tools/cadence/XCELIUM2203/tools/xcelium/files/xmsimrc
-xcelium> run
-Simulation complete via $finish(1) at time 2505 NS + 0
-../TESTBENCH/tb_uart_top.v:211                 $finish                                                 ;
+xcelium> ^C
 xcelium> exit
-TOOL:	xrun(64)	22.03-s012: Exiting on Oct 15, 2026 at 10:44:58 KST  (total: 00:00:01)
+xmsim: *W,NORUNCMD: No 'run' command issued.
+TOOL:	xrun(64)	22.03-s012: Exiting on Oct 16, 2026 at 11:58:31 KST  (total: 00:25:40)

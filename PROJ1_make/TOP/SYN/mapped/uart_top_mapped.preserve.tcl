@@ -105,3 +105,7 @@ catch {set_db base_cell:TLATX1 .dont_use true}
 catch {set_db base_cell:TLATX2 .dont_use true}
 catch {set_db base_cell:TLATX4 .dont_use true}
 catch {set_db base_cell:TLATXL .dont_use true}
+catch {set_db pin:uart_top/u_rx/overrun_err_reg/Q .dont_touch false}
+catch {set_db pin:uart_top/u_rx/parity_err_reg/Q .dont_touch false}
+catch {set_db pin:uart_top/u_rx/frame_err_reg/Q .dont_touch false}
+catch {set_db pin:uart_top/u_tx/tx_done_reg/Q .dont_touch false}

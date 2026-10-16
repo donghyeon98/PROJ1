@@ -13,8 +13,36 @@ add mapped point tx_data[0] tx_data[0] -type PI PI
 add mapped point tx_valid tx_valid -type PI PI
 add mapped point rx rx -type PI PI
 add mapped point rx_ready rx_ready -type PI PI
+add mapped point tx_done tx_done -type PI PI
+add mapped point ier_we ier_we -type PI PI
+add mapped point ier_wdata[5] ier_wdata[5] -type PI PI
+add mapped point ier_wdata[4] ier_wdata[4] -type PI PI
+add mapped point ier_wdata[3] ier_wdata[3] -type PI PI
+add mapped point ier_wdata[2] ier_wdata[2] -type PI PI
+add mapped point ier_wdata[1] ier_wdata[1] -type PI PI
+add mapped point ier_wdata[0] ier_wdata[0] -type PI PI
+add mapped point isr_clr_we isr_clr_we -type PI PI
+add mapped point isr_clr_data[5] isr_clr_data[5] -type PI PI
+add mapped point isr_clr_data[4] isr_clr_data[4] -type PI PI
+add mapped point isr_clr_data[3] isr_clr_data[3] -type PI PI
+add mapped point isr_clr_data[2] isr_clr_data[2] -type PI PI
+add mapped point isr_clr_data[1] isr_clr_data[1] -type PI PI
+add mapped point isr_clr_data[0] isr_clr_data[0] -type PI PI
 
 //output ports
+add mapped point ier[5] ier[5] -type PO PO
+add mapped point ier[4] ier[4] -type PO PO
+add mapped point ier[3] ier[3] -type PO PO
+add mapped point ier[2] ier[2] -type PO PO
+add mapped point ier[1] ier[1] -type PO PO
+add mapped point ier[0] ier[0] -type PO PO
+add mapped point isr[5] isr[5] -type PO PO
+add mapped point isr[4] isr[4] -type PO PO
+add mapped point isr[3] isr[3] -type PO PO
+add mapped point isr[2] isr[2] -type PO PO
+add mapped point isr[1] isr[1] -type PO PO
+add mapped point isr[0] isr[0] -type PO PO
+add mapped point irq irq -type PO PO
 add mapped point rx_valid rx_valid -type PO PO
 add mapped point rx_data[7] rx_data[7] -type PO PO
 add mapped point rx_data[6] rx_data[6] -type PO PO
@@ -190,9 +218,9 @@ add mapped point u_rx/rx_fifo/wr_ptr[1]/q u_rx/rx_fifo/wr_ptr_reg_1/Q -type DFF 
 add mapped point u_rx/rx_fifo/wr_ptr[2]/q u_rx/rx_fifo/wr_ptr_reg_2/Q -type DFF DFF
 add mapped point u_rx/rx_fifo/wr_ptr[3]/q u_rx/rx_fifo/wr_ptr_reg_3/Q -type DFF DFF
 add mapped point u_rx/rx_fifo/wr_ptr[4]/q u_rx/rx_fifo/wr_ptr_reg_4/Q -type DFF DFF
-add mapped point u_rx/parity_err/q u_rx/parity_err_reg/Q -type DFF DFF
 add mapped point u_rx/fifo_wr_en/q u_rx/fifo_wr_en_reg/Q -type DFF DFF
 add mapped point u_rx/overrun_err/q u_rx/overrun_err_reg/Q -type DFF DFF
+add mapped point u_rx/parity_err/q u_rx/parity_err_reg/Q -type DFF DFF
 add mapped point u_rx/frame_err/q u_rx/frame_err_reg/Q -type DFF DFF
 add mapped point u_rx/rx_sync2/q u_rx/rx_sync2_reg/Q -type DFF DFF
 add mapped point u_rx/rx_sync1/q u_rx/rx_sync1_reg/Q -type DFF DFF
@@ -365,25 +393,27 @@ add mapped point u_tx/tx_fifo/wr_ptr[2]/q u_tx/tx_fifo/wr_ptr_reg_2/Q -type DFF 
 add mapped point u_tx/tx_fifo/wr_ptr[3]/q u_tx/tx_fifo/wr_ptr_reg_3/Q -type DFF DFF
 add mapped point u_tx/tx_fifo/wr_ptr[4]/q u_tx/tx_fifo/wr_ptr_reg_4/Q -type DFF DFF
 add mapped point u_tx/tx/q u_tx/tx_reg/Q -type DFF DFF
+add mapped point u_tx/tx_done/q u_tx/tx_done_reg/Q -type DFF DFF
 add mapped point u_tx/tx_parity_bit/q u_tx/tx_parity_bit_reg/Q -type DFF DFF
-add mapped point u_tx/bit_cnt[2]/q u_tx/bit_cnt_reg_2/Q -type DFF DFF
-add mapped point u_tx/bit_cnt[1]/q u_tx/bit_cnt_reg_1/Q -type DFF DFF
-add mapped point u_tx/bit_cnt[0]/q u_tx/bit_cnt_reg_0/Q -type DFF DFF
-add mapped point u_tx/tx_data_reg[6]/q u_tx/tx_data_reg_reg_6/Q -type DFF DFF
 add mapped point u_tx/tx_data_reg[1]/q u_tx/tx_data_reg_reg_1/Q -type DFF DFF
 add mapped point u_tx/tx_data_reg[2]/q u_tx/tx_data_reg_reg_2/Q -type DFF DFF
 add mapped point u_tx/tx_data_reg[3]/q u_tx/tx_data_reg_reg_3/Q -type DFF DFF
-add mapped point u_tx/tx_data_reg[4]/q u_tx/tx_data_reg_reg_4/Q -type DFF DFF
 add mapped point u_tx/tx_data_reg[5]/q u_tx/tx_data_reg_reg_5/Q -type DFF DFF
+add mapped point u_tx/tx_data_reg[6]/q u_tx/tx_data_reg_reg_6/Q -type DFF DFF
 add mapped point u_tx/tx_data_reg[0]/q u_tx/tx_data_reg_reg_0/Q -type DFF DFF
-add mapped point u_tx/tx_data_reg[7]/q u_tx/tx_data_reg_reg_7/Q -type DFF DFF
-add mapped point u_tx/state[0]/q u_tx/state_reg_0/Q -type DFF DFF
+add mapped point u_tx/bit_cnt[0]/q u_tx/bit_cnt_reg_0/Q -type DFF DFF
 add mapped point u_tx/state[1]/q u_tx/state_reg_1/Q -type DFF DFF
+add mapped point u_tx/tx_data_reg[7]/q u_tx/tx_data_reg_reg_7/Q -type DFF DFF
+add mapped point u_tx/bit_cnt[2]/q u_tx/bit_cnt_reg_2/Q -type DFF DFF
+add mapped point u_tx/tx_data_reg[4]/q u_tx/tx_data_reg_reg_4/Q -type DFF DFF
+add mapped point u_tx/bit_cnt[1]/q u_tx/bit_cnt_reg_1/Q -type DFF DFF
+add mapped point u_tx/state[0]/q u_tx/state_reg_0/Q -type DFF DFF
 add mapped point u_tx/state[2]/q u_tx/state_reg_2/Q -type DFF DFF
 
 
 
 //Black Boxes
+add mapped point u_irq u_irq -type BBOX BBOX
 
 
 
