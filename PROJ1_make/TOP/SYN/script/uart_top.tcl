@@ -9,7 +9,7 @@ puts "Hostname : [info hostname]"
 ######################################################################
 # Preset global variables and attributes
 ######################################################################
-
+## setting
 set TOP_DESIGN  uart_top
 
 set LOG_DIR     "./log"
@@ -33,6 +33,7 @@ set QRC_LIST {gpdk045.tch}
 set RTL_SOURCES "../RTL/uart_top.v \
 		../RTL/uart_tx.v \
 		../RTL/uart_rx.v \
+		../RTL/uart_irq.v \
 		../RTL/baud_rate_gen.v \
 		../RTL/Sync_FIFO.v \
 "

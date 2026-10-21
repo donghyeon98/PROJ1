@@ -1,6 +1,6 @@
 ######################################################################
 
-# Created by Genus(TM) Synthesis Solution 22.17-s071_1 on Fri Oct 16 11:59:34 KST 2026
+# Created by Genus(TM) Synthesis Solution 22.17-s071_1 on Wed Oct 21 01:46:34 KST 2026
 
 # This file contains the Genus script for design:uart_top
 
@@ -18,7 +18,7 @@ set_db -quiet phys_route_time_out 120.0
 set_db -quiet db_units 2000
 set_db -quiet capacitance_per_unit_length_mmmc {}
 set_db -quiet resistance_per_unit_length_mmmc {}
-set_db -quiet runtime_by_stage {{PBS_Generic-Start 0 19 0.0 16.980375} {to_generic 5 25 4 22} {first_condense 4 29 5 29} {PBS_Generic_Opt-Post 10 30 10.667013 27.647388} {{PBS_Generic-Postgen HBO Optimizations} 0 30 0.0 27.647388} {PBS_TechMap-Start 0 32 0.0 29.596257} {{PBS_TechMap-Premap HBO Optimizations} 0 32 0.0 29.596257} {second_condense 3 35 4 35} {reify 5 40 6 42} {global_incr_map 1 41 0 43} {{PBS_Techmap-Global Mapping} 9 41 8.884357999999999 38.480615} {{PBS_TechMap-Datapath Postmap Operations} 3 44 2.0 40.480615} {{PBS_TechMap-Postmap HBO Optimizations} 0 44 -0.017085999999999046 40.463529} {{PBS_TechMap-Postmap Clock Gating} 0 44 0.0 40.463529} {{PBS_TechMap-Postmap Cleanup} 0 44 0.9815550000000002 41.445084} {PBS_Techmap-Post_MBCI 0 44 0.0 41.445084} {incr_opt 2 48 2 49} }
+set_db -quiet runtime_by_stage {{PBS_Generic-Start 0 19 0.0 17.989267} {to_generic 5 25 5 23} {first_condense 4 29 4 28} {PBS_Generic_Opt-Post 10 29 9.951003 27.94027} {{PBS_Generic-Postgen HBO Optimizations} 0 29 0.0 27.94027} {PBS_TechMap-Start 0 31 0.0 28.88789} {{PBS_TechMap-Premap HBO Optimizations} 0 32 0.0 28.88789} {second_condense 2 34 3 34} {reify 6 40 7 41} {global_incr_map 1 41 1 43} {{PBS_Techmap-Global Mapping} 9 41 9.514349000000003 38.402239} {{PBS_TechMap-Datapath Postmap Operations} 2 43 1.98386 40.386099} {{PBS_TechMap-Postmap HBO Optimizations} 0 43 -0.017634000000001038 40.368465} {{PBS_TechMap-Postmap Clock Gating} 0 43 0.0 40.368465} {{PBS_TechMap-Postmap Cleanup} 0 43 0.9816429999999983 41.350108} {PBS_Techmap-Post_MBCI 0 43 0.0 41.350108} {incr_opt 3 48 2 49} }
 set_db -quiet timing_adjust_tns_of_complex_flops false
 set_db -quiet hdl_array_naming_style %s_%d
 set_db -quiet tinfo_tstamp_file .rs_hah001.tstamp
@@ -282,119 +282,115 @@ external_delay -accumulate -input {no_value no_value 100.0 100.0} -clock clock:u
 external_delay -accumulate -input {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name in_del_9_1 port:uart_top/tx_valid
 external_delay -accumulate -input {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name in_del_10_1 port:uart_top/rx
 external_delay -accumulate -input {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name in_del_11_1 port:uart_top/rx_ready
-external_delay -accumulate -input {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name in_del_12_1 port:uart_top/tx_done
-external_delay -accumulate -input {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name in_del_13_1 port:uart_top/ier_we
-external_delay -accumulate -input {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name in_del_14_1 {{port:uart_top/ier_wdata[5]}}
-external_delay -accumulate -input {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name in_del_15_1 {{port:uart_top/ier_wdata[4]}}
-external_delay -accumulate -input {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name in_del_16_1 {{port:uart_top/ier_wdata[3]}}
-external_delay -accumulate -input {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name in_del_17_1 {{port:uart_top/ier_wdata[2]}}
-external_delay -accumulate -input {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name in_del_18_1 {{port:uart_top/ier_wdata[1]}}
-external_delay -accumulate -input {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name in_del_19_1 {{port:uart_top/ier_wdata[0]}}
-external_delay -accumulate -input {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name in_del_20_1 port:uart_top/isr_clr_we
-external_delay -accumulate -input {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name in_del_21_1 {{port:uart_top/isr_clr_data[5]}}
-external_delay -accumulate -input {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name in_del_22_1 {{port:uart_top/isr_clr_data[4]}}
-external_delay -accumulate -input {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name in_del_23_1 {{port:uart_top/isr_clr_data[3]}}
-external_delay -accumulate -input {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name in_del_24_1 {{port:uart_top/isr_clr_data[2]}}
-external_delay -accumulate -input {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name in_del_25_1 {{port:uart_top/isr_clr_data[1]}}
-external_delay -accumulate -input {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name in_del_26_1 {{port:uart_top/isr_clr_data[0]}}
-external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_27_1 port:uart_top/rst_n
-external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_28_1 {{port:uart_top/tx_data[7]}}
-external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_29_1 {{port:uart_top/tx_data[6]}}
-external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_30_1 {{port:uart_top/tx_data[5]}}
-external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_31_1 {{port:uart_top/tx_data[4]}}
-external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_32_1 {{port:uart_top/tx_data[3]}}
-external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_33_1 {{port:uart_top/tx_data[2]}}
-external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_34_1 {{port:uart_top/tx_data[1]}}
-external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_35_1 {{port:uart_top/tx_data[0]}}
-external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_36_1 port:uart_top/tx_valid
-external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_37_1 port:uart_top/rx
-external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_38_1 port:uart_top/rx_ready
-external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_39_1 port:uart_top/tx_done
-external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_40_1 port:uart_top/ier_we
-external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_41_1 {{port:uart_top/ier_wdata[5]}}
-external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_42_1 {{port:uart_top/ier_wdata[4]}}
-external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_43_1 {{port:uart_top/ier_wdata[3]}}
-external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_44_1 {{port:uart_top/ier_wdata[2]}}
-external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_45_1 {{port:uart_top/ier_wdata[1]}}
-external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_46_1 {{port:uart_top/ier_wdata[0]}}
-external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_47_1 port:uart_top/isr_clr_we
-external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_48_1 {{port:uart_top/isr_clr_data[5]}}
-external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_49_1 {{port:uart_top/isr_clr_data[4]}}
-external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_50_1 {{port:uart_top/isr_clr_data[3]}}
-external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_51_1 {{port:uart_top/isr_clr_data[2]}}
-external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_52_1 {{port:uart_top/isr_clr_data[1]}}
-external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_53_1 {{port:uart_top/isr_clr_data[0]}}
+external_delay -accumulate -input {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name in_del_12_1 port:uart_top/ier_we
+external_delay -accumulate -input {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name in_del_13_1 {{port:uart_top/ier_wdata[5]}}
+external_delay -accumulate -input {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name in_del_14_1 {{port:uart_top/ier_wdata[4]}}
+external_delay -accumulate -input {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name in_del_15_1 {{port:uart_top/ier_wdata[3]}}
+external_delay -accumulate -input {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name in_del_16_1 {{port:uart_top/ier_wdata[2]}}
+external_delay -accumulate -input {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name in_del_17_1 {{port:uart_top/ier_wdata[1]}}
+external_delay -accumulate -input {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name in_del_18_1 {{port:uart_top/ier_wdata[0]}}
+external_delay -accumulate -input {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name in_del_19_1 port:uart_top/isr_clr_we
+external_delay -accumulate -input {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name in_del_20_1 {{port:uart_top/isr_clr_data[5]}}
+external_delay -accumulate -input {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name in_del_21_1 {{port:uart_top/isr_clr_data[4]}}
+external_delay -accumulate -input {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name in_del_22_1 {{port:uart_top/isr_clr_data[3]}}
+external_delay -accumulate -input {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name in_del_23_1 {{port:uart_top/isr_clr_data[2]}}
+external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_24_1 port:uart_top/rst_n
+external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_25_1 {{port:uart_top/tx_data[7]}}
+external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_26_1 {{port:uart_top/tx_data[6]}}
+external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_27_1 {{port:uart_top/tx_data[5]}}
+external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_28_1 {{port:uart_top/tx_data[4]}}
+external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_29_1 {{port:uart_top/tx_data[3]}}
+external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_30_1 {{port:uart_top/tx_data[2]}}
+external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_31_1 {{port:uart_top/tx_data[1]}}
+external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_32_1 {{port:uart_top/tx_data[0]}}
+external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_33_1 port:uart_top/tx_valid
+external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_34_1 port:uart_top/rx
+external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_35_1 port:uart_top/rx_ready
+external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_36_1 port:uart_top/ier_we
+external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_37_1 {{port:uart_top/ier_wdata[5]}}
+external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_38_1 {{port:uart_top/ier_wdata[4]}}
+external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_39_1 {{port:uart_top/ier_wdata[3]}}
+external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_40_1 {{port:uart_top/ier_wdata[2]}}
+external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_41_1 {{port:uart_top/ier_wdata[1]}}
+external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_42_1 {{port:uart_top/ier_wdata[0]}}
+external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_43_1 port:uart_top/isr_clr_we
+external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_44_1 {{port:uart_top/isr_clr_data[5]}}
+external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_45_1 {{port:uart_top/isr_clr_data[4]}}
+external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_46_1 {{port:uart_top/isr_clr_data[3]}}
+external_delay -accumulate -input {10.0 10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name in_del_47_1 {{port:uart_top/isr_clr_data[2]}}
 external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del {{port:uart_top/ier[5]}}
-external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_53_1 {{port:uart_top/ier[4]}}
-external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_54_1 {{port:uart_top/ier[3]}}
-external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_55_1 {{port:uart_top/ier[2]}}
-external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_56_1 {{port:uart_top/ier[1]}}
-external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_57_1 {{port:uart_top/ier[0]}}
-external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_58_1 {{port:uart_top/isr[5]}}
-external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_59_1 {{port:uart_top/isr[4]}}
-external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_60_1 {{port:uart_top/isr[3]}}
-external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_61_1 {{port:uart_top/isr[2]}}
-external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_62_1 {{port:uart_top/isr[1]}}
-external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_63_1 {{port:uart_top/isr[0]}}
-external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_64_1 port:uart_top/irq
-external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_65_1 port:uart_top/rx_valid
-external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_66_1 {{port:uart_top/rx_data[7]}}
-external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_67_1 {{port:uart_top/rx_data[6]}}
-external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_68_1 {{port:uart_top/rx_data[5]}}
-external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_69_1 {{port:uart_top/rx_data[4]}}
-external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_70_1 {{port:uart_top/rx_data[3]}}
-external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_71_1 {{port:uart_top/rx_data[2]}}
-external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_72_1 {{port:uart_top/rx_data[1]}}
-external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_73_1 {{port:uart_top/rx_data[0]}}
-external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_74_1 port:uart_top/rx_full
-external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_75_1 port:uart_top/rx_empty
-external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_76_1 port:uart_top/frame_err
-external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_77_1 port:uart_top/parity_err
-external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_78_1 port:uart_top/overrun_err
-external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_79_1 port:uart_top/tx_ready
-external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_80_1 port:uart_top/tx_full
-external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_81_1 port:uart_top/tx_empty
-external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_82_1 port:uart_top/tx
-external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_83_1 {{port:uart_top/ier[5]}}
-external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_84_1 {{port:uart_top/ier[4]}}
-external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_85_1 {{port:uart_top/ier[3]}}
-external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_86_1 {{port:uart_top/ier[2]}}
-external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_87_1 {{port:uart_top/ier[1]}}
-external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_88_1 {{port:uart_top/ier[0]}}
-external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_89_1 {{port:uart_top/isr[5]}}
-external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_90_1 {{port:uart_top/isr[4]}}
-external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_91_1 {{port:uart_top/isr[3]}}
-external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_92_1 {{port:uart_top/isr[2]}}
-external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_93_1 {{port:uart_top/isr[1]}}
-external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_94_1 {{port:uart_top/isr[0]}}
-external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_95_1 port:uart_top/irq
-external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_96_1 port:uart_top/rx_valid
-external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_97_1 {{port:uart_top/rx_data[7]}}
-external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_98_1 {{port:uart_top/rx_data[6]}}
-external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_99_1 {{port:uart_top/rx_data[5]}}
-external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_100_1 {{port:uart_top/rx_data[4]}}
-external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_101_1 {{port:uart_top/rx_data[3]}}
-external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_102_1 {{port:uart_top/rx_data[2]}}
-external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_103_1 {{port:uart_top/rx_data[1]}}
-external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_104_1 {{port:uart_top/rx_data[0]}}
-external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_105_1 port:uart_top/rx_full
-external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_106_1 port:uart_top/rx_empty
-external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_107_1 port:uart_top/frame_err
-external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_108_1 port:uart_top/parity_err
-external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_109_1 port:uart_top/overrun_err
-external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_110_1 port:uart_top/tx_ready
-external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_111_1 port:uart_top/tx_full
-external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_112_1 port:uart_top/tx_empty
-external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_113_1 port:uart_top/tx
+external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_47_1 {{port:uart_top/ier[4]}}
+external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_48_1 {{port:uart_top/ier[3]}}
+external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_49_1 {{port:uart_top/ier[2]}}
+external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_50_1 {{port:uart_top/ier[1]}}
+external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_51_1 {{port:uart_top/ier[0]}}
+external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_52_1 {{port:uart_top/isr[5]}}
+external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_53_1 {{port:uart_top/isr[4]}}
+external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_54_1 {{port:uart_top/isr[3]}}
+external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_55_1 {{port:uart_top/isr[2]}}
+external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_56_1 {{port:uart_top/isr[1]}}
+external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_57_1 {{port:uart_top/isr[0]}}
+external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_58_1 port:uart_top/irq
+external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_59_1 port:uart_top/tx_done
+external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_60_1 port:uart_top/rx_valid
+external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_61_1 {{port:uart_top/rx_data[7]}}
+external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_62_1 {{port:uart_top/rx_data[6]}}
+external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_63_1 {{port:uart_top/rx_data[5]}}
+external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_64_1 {{port:uart_top/rx_data[4]}}
+external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_65_1 {{port:uart_top/rx_data[3]}}
+external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_66_1 {{port:uart_top/rx_data[2]}}
+external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_67_1 {{port:uart_top/rx_data[1]}}
+external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_68_1 {{port:uart_top/rx_data[0]}}
+external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_69_1 port:uart_top/rx_full
+external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_70_1 port:uart_top/rx_empty
+external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_71_1 port:uart_top/frame_err
+external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_72_1 port:uart_top/parity_err
+external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_73_1 port:uart_top/overrun_err
+external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_74_1 port:uart_top/tx_ready
+external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_75_1 port:uart_top/tx_full
+external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_76_1 port:uart_top/tx_empty
+external_delay -accumulate -output {no_value no_value 100.0 100.0} -clock clock:uart_top/MAIN_CLOCK -name ou_del_77_1 port:uart_top/tx
+external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_78_1 {{port:uart_top/ier[5]}}
+external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_79_1 {{port:uart_top/ier[4]}}
+external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_80_1 {{port:uart_top/ier[3]}}
+external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_81_1 {{port:uart_top/ier[2]}}
+external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_82_1 {{port:uart_top/ier[1]}}
+external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_83_1 {{port:uart_top/ier[0]}}
+external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_84_1 {{port:uart_top/isr[5]}}
+external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_85_1 {{port:uart_top/isr[4]}}
+external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_86_1 {{port:uart_top/isr[3]}}
+external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_87_1 {{port:uart_top/isr[2]}}
+external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_88_1 {{port:uart_top/isr[1]}}
+external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_89_1 {{port:uart_top/isr[0]}}
+external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_90_1 port:uart_top/irq
+external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_91_1 port:uart_top/tx_done
+external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_92_1 port:uart_top/rx_valid
+external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_93_1 {{port:uart_top/rx_data[7]}}
+external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_94_1 {{port:uart_top/rx_data[6]}}
+external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_95_1 {{port:uart_top/rx_data[5]}}
+external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_96_1 {{port:uart_top/rx_data[4]}}
+external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_97_1 {{port:uart_top/rx_data[3]}}
+external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_98_1 {{port:uart_top/rx_data[2]}}
+external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_99_1 {{port:uart_top/rx_data[1]}}
+external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_100_1 {{port:uart_top/rx_data[0]}}
+external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_101_1 port:uart_top/rx_full
+external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_102_1 port:uart_top/rx_empty
+external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_103_1 port:uart_top/frame_err
+external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_104_1 port:uart_top/parity_err
+external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_105_1 port:uart_top/overrun_err
+external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_106_1 port:uart_top/tx_ready
+external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_107_1 port:uart_top/tx_full
+external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_108_1 port:uart_top/tx_empty
+external_delay -accumulate -output {-10.0 -10.0 no_value no_value} -clock clock:uart_top/MAIN_CLOCK -name ou_del_109_1 port:uart_top/tx
 path_group -paths [specify_paths -lenient -to clock:uart_top/MAIN_CLOCK]  -name MAIN_CLOCK -group cost_group:uart_top/MAIN_CLOCK -user_priority -1047552
 # BEGIN DFT SECTION
 set_db -quiet dft_scan_style muxed_scan
 set_db -quiet dft_scanbit_waveform_analysis false
 # END DFT SECTION
 set_db -quiet design:uart_top .seq_reason_deleted_internal {}
-set_db -quiet design:uart_top .qos_by_stage {{to_generic {wns -11111111} {tns -111111111} {vep -111111111} {area 34043} {cell_count 929} {utilization  0.00} {runtime 5 25 4 22} }{first_condense {wns -11111111} {tns -111111111} {vep -111111111} {area 34409} {cell_count 1337} {utilization  0.00} {runtime 4 29 5 29} }{second_condense {wns -11111111} {tns -111111111} {vep -111111111} {area 34407} {cell_count 1336} {utilization  0.00} {runtime 3 35 4 35} }{reify {wns 420} {tns 0} {vep 0} {area 32646} {cell_count 944} {utilization  0.00} {runtime 5 40 6 42} }{global_incr_map {wns 421} {tns 0} {vep 0} {area 32439} {cell_count 865} {utilization  0.00} {runtime 1 41 0 43} }{incr_opt {wns 214748365} {tns 0} {vep 0} {area 32428} {cell_count 851} {utilization  0.00} {runtime 2 49 2 49} }}
+set_db -quiet design:uart_top .qos_by_stage {{to_generic {wns -11111111} {tns -111111111} {vep -111111111} {area 34276} {cell_count 993} {utilization  0.00} {runtime 5 25 5 23} }{first_condense {wns -11111111} {tns -111111111} {vep -111111111} {area 34606} {cell_count 1376} {utilization  0.00} {runtime 4 29 4 28} }{second_condense {wns -11111111} {tns -111111111} {vep -111111111} {area 34604} {cell_count 1375} {utilization  0.00} {runtime 2 34 3 34} }{reify {wns 420} {tns 0} {vep 0} {area 32774} {cell_count 978} {utilization  0.00} {runtime 6 40 7 41} }{global_incr_map {wns 421} {tns 0} {vep 0} {area 32573} {cell_count 904} {utilization  0.00} {runtime 1 41 1 43} }{incr_opt {wns 214748365} {tns 0} {vep 0} {area 32561} {cell_count 883} {utilization  0.00} {runtime 3 48 2 49} }}
 set_db -quiet design:uart_top .seq_mbci_coverage 0.0
-set_db -quiet design:uart_top .hdl_filelist {{default -v2001 {SYNTHESIS} {../RTL/uart_top.v ../RTL/uart_tx.v ../RTL/uart_rx.v ../RTL/baud_rate_gen.v ../RTL/Sync_FIFO.v} {../RTL} {}}}
+set_db -quiet design:uart_top .hdl_filelist {{default -v2001 {SYNTHESIS} {../RTL/uart_top.v ../RTL/uart_tx.v ../RTL/uart_rx.v ../RTL/uart_irq.v ../RTL/baud_rate_gen.v ../RTL/Sync_FIFO.v} {../RTL} {}}}
 set_db -quiet design:uart_top .verification_directory fv/uart_top
 set_db -quiet port:uart_top/clk .is_ideal_network true
 set_db -quiet port:uart_top/clk .original_name clk
@@ -461,11 +457,6 @@ set_db -quiet port:uart_top/rx_ready .driver_pin_fall_min lib_pin:default_emulat
 set_db -quiet port:uart_top/rx_ready .driver_pin_rise_max lib_pin:default_emulate_libset_max/giolib045/PADDI/Y
 set_db -quiet port:uart_top/rx_ready .driver_pin_fall_max lib_pin:default_emulate_libset_max/giolib045/PADDI/Y
 set_db -quiet port:uart_top/rx_ready .original_name rx_ready
-set_db -quiet port:uart_top/tx_done .driver_pin_rise_min lib_pin:default_emulate_libset_max/giolib045/PADDI/Y
-set_db -quiet port:uart_top/tx_done .driver_pin_fall_min lib_pin:default_emulate_libset_max/giolib045/PADDI/Y
-set_db -quiet port:uart_top/tx_done .driver_pin_rise_max lib_pin:default_emulate_libset_max/giolib045/PADDI/Y
-set_db -quiet port:uart_top/tx_done .driver_pin_fall_max lib_pin:default_emulate_libset_max/giolib045/PADDI/Y
-set_db -quiet port:uart_top/tx_done .original_name tx_done
 set_db -quiet port:uart_top/ier_we .driver_pin_rise_min lib_pin:default_emulate_libset_max/giolib045/PADDI/Y
 set_db -quiet port:uart_top/ier_we .driver_pin_fall_min lib_pin:default_emulate_libset_max/giolib045/PADDI/Y
 set_db -quiet port:uart_top/ier_we .driver_pin_rise_max lib_pin:default_emulate_libset_max/giolib045/PADDI/Y
@@ -526,16 +517,6 @@ set_db -quiet {port:uart_top/isr_clr_data[2]} .driver_pin_fall_min lib_pin:defau
 set_db -quiet {port:uart_top/isr_clr_data[2]} .driver_pin_rise_max lib_pin:default_emulate_libset_max/giolib045/PADDI/Y
 set_db -quiet {port:uart_top/isr_clr_data[2]} .driver_pin_fall_max lib_pin:default_emulate_libset_max/giolib045/PADDI/Y
 set_db -quiet {port:uart_top/isr_clr_data[2]} .original_name {isr_clr_data[2]}
-set_db -quiet {port:uart_top/isr_clr_data[1]} .driver_pin_rise_min lib_pin:default_emulate_libset_max/giolib045/PADDI/Y
-set_db -quiet {port:uart_top/isr_clr_data[1]} .driver_pin_fall_min lib_pin:default_emulate_libset_max/giolib045/PADDI/Y
-set_db -quiet {port:uart_top/isr_clr_data[1]} .driver_pin_rise_max lib_pin:default_emulate_libset_max/giolib045/PADDI/Y
-set_db -quiet {port:uart_top/isr_clr_data[1]} .driver_pin_fall_max lib_pin:default_emulate_libset_max/giolib045/PADDI/Y
-set_db -quiet {port:uart_top/isr_clr_data[1]} .original_name {isr_clr_data[1]}
-set_db -quiet {port:uart_top/isr_clr_data[0]} .driver_pin_rise_min lib_pin:default_emulate_libset_max/giolib045/PADDI/Y
-set_db -quiet {port:uart_top/isr_clr_data[0]} .driver_pin_fall_min lib_pin:default_emulate_libset_max/giolib045/PADDI/Y
-set_db -quiet {port:uart_top/isr_clr_data[0]} .driver_pin_rise_max lib_pin:default_emulate_libset_max/giolib045/PADDI/Y
-set_db -quiet {port:uart_top/isr_clr_data[0]} .driver_pin_fall_max lib_pin:default_emulate_libset_max/giolib045/PADDI/Y
-set_db -quiet {port:uart_top/isr_clr_data[0]} .original_name {isr_clr_data[0]}
 set_db -quiet {port:uart_top/ier[5]} .external_pin_cap_min 3.0
 set_db -quiet {port:uart_top/ier[5]} .external_capacitance_max {3.0 3.0}
 set_db -quiet {port:uart_top/ier[5]} .external_capacitance_min 3.0
@@ -601,6 +582,11 @@ set_db -quiet port:uart_top/irq .external_capacitance_max {3.0 3.0}
 set_db -quiet port:uart_top/irq .external_capacitance_min 3.0
 set_db -quiet port:uart_top/irq .original_name irq
 set_db -quiet port:uart_top/irq .external_pin_cap {3.0 3.0}
+set_db -quiet port:uart_top/tx_done .external_pin_cap_min 3.0
+set_db -quiet port:uart_top/tx_done .external_capacitance_max {3.0 3.0}
+set_db -quiet port:uart_top/tx_done .external_capacitance_min 3.0
+set_db -quiet port:uart_top/tx_done .original_name tx_done
+set_db -quiet port:uart_top/tx_done .external_pin_cap {3.0 3.0}
 set_db -quiet port:uart_top/rx_valid .external_pin_cap_min 3.0
 set_db -quiet port:uart_top/rx_valid .external_capacitance_max {3.0 3.0}
 set_db -quiet port:uart_top/rx_valid .external_capacitance_min 3.0
@@ -753,8 +739,86 @@ set_db -quiet inst:uart_top/baud/os_tick_cnt_reg_0 .original_name {{baud/os_tick
 set_db -quiet inst:uart_top/baud/os_tick_cnt_reg_0 .single_bit_orig_name {baud/os_tick_cnt[0]}
 set_db -quiet pin:uart_top/baud/os_tick_cnt_reg_0/Q .original_name {baud/os_tick_cnt[0]/q}
 set_db -quiet pin:uart_top/baud/os_tick_cnt_reg_0/QN .original_name {baud/os_tick_cnt[0]/q}
-set_db -quiet hinst:uart_top/u_irq .original_name u_irq
-set_db -quiet hinst:uart_top/u_irq .single_bit_orig_name u_irq
+set_db -quiet module:uart_top/uart_irq .hdl_filelist {{default -v2001 {SYNTHESIS} {../RTL/uart_irq.v} {../RTL} {}}}
+set_db -quiet inst:uart_top/u_irq/irq_reg .orig_hdl_instantiated false
+set_db -quiet inst:uart_top/u_irq/irq_reg .gint_phase_inversion false
+set_db -quiet inst:uart_top/u_irq/irq_reg .original_name u_irq/irq
+set_db -quiet inst:uart_top/u_irq/irq_reg .single_bit_orig_name u_irq/irq
+set_db -quiet pin:uart_top/u_irq/irq_reg/Q .original_name u_irq/irq/q
+set_db -quiet inst:uart_top/u_irq/st_reg_2 .orig_hdl_instantiated false
+set_db -quiet inst:uart_top/u_irq/st_reg_2 .gint_phase_inversion false
+set_db -quiet inst:uart_top/u_irq/st_reg_2 .original_name {{u_irq/st[2]}}
+set_db -quiet inst:uart_top/u_irq/st_reg_2 .single_bit_orig_name {u_irq/st[2]}
+set_db -quiet pin:uart_top/u_irq/st_reg_2/Q .original_name {u_irq/st[2]/q}
+set_db -quiet inst:uart_top/u_irq/st_reg_3 .orig_hdl_instantiated false
+set_db -quiet inst:uart_top/u_irq/st_reg_3 .gint_phase_inversion false
+set_db -quiet inst:uart_top/u_irq/st_reg_3 .original_name {{u_irq/st[3]}}
+set_db -quiet inst:uart_top/u_irq/st_reg_3 .single_bit_orig_name {u_irq/st[3]}
+set_db -quiet pin:uart_top/u_irq/st_reg_3/Q .original_name {u_irq/st[3]/q}
+set_db -quiet inst:uart_top/u_irq/st_reg_4 .orig_hdl_instantiated false
+set_db -quiet inst:uart_top/u_irq/st_reg_4 .gint_phase_inversion false
+set_db -quiet inst:uart_top/u_irq/st_reg_4 .original_name {{u_irq/st[4]}}
+set_db -quiet inst:uart_top/u_irq/st_reg_4 .single_bit_orig_name {u_irq/st[4]}
+set_db -quiet pin:uart_top/u_irq/st_reg_4/Q .original_name {u_irq/st[4]/q}
+set_db -quiet inst:uart_top/u_irq/st_reg_5 .orig_hdl_instantiated false
+set_db -quiet inst:uart_top/u_irq/st_reg_5 .gint_phase_inversion false
+set_db -quiet inst:uart_top/u_irq/st_reg_5 .original_name {{u_irq/st[5]}}
+set_db -quiet inst:uart_top/u_irq/st_reg_5 .single_bit_orig_name {u_irq/st[5]}
+set_db -quiet pin:uart_top/u_irq/st_reg_5/Q .original_name {u_irq/st[5]/q}
+set_db -quiet inst:uart_top/u_irq/ier_reg_0 .orig_hdl_instantiated false
+set_db -quiet inst:uart_top/u_irq/ier_reg_0 .gint_phase_inversion false
+set_db -quiet inst:uart_top/u_irq/ier_reg_0 .original_name {{u_irq/ier[0]}}
+set_db -quiet inst:uart_top/u_irq/ier_reg_0 .single_bit_orig_name {u_irq/ier[0]}
+set_db -quiet pin:uart_top/u_irq/ier_reg_0/Q .original_name {u_irq/ier[0]/q}
+set_db -quiet inst:uart_top/u_irq/ier_reg_2 .orig_hdl_instantiated false
+set_db -quiet inst:uart_top/u_irq/ier_reg_2 .gint_phase_inversion false
+set_db -quiet inst:uart_top/u_irq/ier_reg_2 .original_name {{u_irq/ier[2]}}
+set_db -quiet inst:uart_top/u_irq/ier_reg_2 .single_bit_orig_name {u_irq/ier[2]}
+set_db -quiet pin:uart_top/u_irq/ier_reg_2/Q .original_name {u_irq/ier[2]/q}
+set_db -quiet inst:uart_top/u_irq/ier_reg_1 .orig_hdl_instantiated false
+set_db -quiet inst:uart_top/u_irq/ier_reg_1 .gint_phase_inversion false
+set_db -quiet inst:uart_top/u_irq/ier_reg_1 .original_name {{u_irq/ier[1]}}
+set_db -quiet inst:uart_top/u_irq/ier_reg_1 .single_bit_orig_name {u_irq/ier[1]}
+set_db -quiet pin:uart_top/u_irq/ier_reg_1/Q .original_name {u_irq/ier[1]/q}
+set_db -quiet inst:uart_top/u_irq/ier_reg_4 .orig_hdl_instantiated false
+set_db -quiet inst:uart_top/u_irq/ier_reg_4 .gint_phase_inversion false
+set_db -quiet inst:uart_top/u_irq/ier_reg_4 .original_name {{u_irq/ier[4]}}
+set_db -quiet inst:uart_top/u_irq/ier_reg_4 .single_bit_orig_name {u_irq/ier[4]}
+set_db -quiet pin:uart_top/u_irq/ier_reg_4/Q .original_name {u_irq/ier[4]/q}
+set_db -quiet inst:uart_top/u_irq/ier_reg_3 .orig_hdl_instantiated false
+set_db -quiet inst:uart_top/u_irq/ier_reg_3 .gint_phase_inversion false
+set_db -quiet inst:uart_top/u_irq/ier_reg_3 .original_name {{u_irq/ier[3]}}
+set_db -quiet inst:uart_top/u_irq/ier_reg_3 .single_bit_orig_name {u_irq/ier[3]}
+set_db -quiet pin:uart_top/u_irq/ier_reg_3/Q .original_name {u_irq/ier[3]/q}
+set_db -quiet inst:uart_top/u_irq/ier_reg_5 .orig_hdl_instantiated false
+set_db -quiet inst:uart_top/u_irq/ier_reg_5 .gint_phase_inversion false
+set_db -quiet inst:uart_top/u_irq/ier_reg_5 .original_name {{u_irq/ier[5]}}
+set_db -quiet inst:uart_top/u_irq/ier_reg_5 .single_bit_orig_name {u_irq/ier[5]}
+set_db -quiet pin:uart_top/u_irq/ier_reg_5/Q .original_name {u_irq/ier[5]/q}
+set_db -quiet inst:uart_top/u_irq/ev_d_reg_4 .orig_hdl_instantiated false
+set_db -quiet inst:uart_top/u_irq/ev_d_reg_4 .gint_phase_inversion false
+set_db -quiet inst:uart_top/u_irq/ev_d_reg_4 .original_name {{u_irq/ev_d[4]}}
+set_db -quiet inst:uart_top/u_irq/ev_d_reg_4 .single_bit_orig_name {u_irq/ev_d[4]}
+set_db -quiet pin:uart_top/u_irq/ev_d_reg_4/Q .original_name {u_irq/ev_d[4]/q}
+set_db -quiet pin:uart_top/u_irq/ev_d_reg_4/QN .original_name {u_irq/ev_d[4]/q}
+set_db -quiet inst:uart_top/u_irq/ev_d_reg_3 .orig_hdl_instantiated false
+set_db -quiet inst:uart_top/u_irq/ev_d_reg_3 .gint_phase_inversion false
+set_db -quiet inst:uart_top/u_irq/ev_d_reg_3 .original_name {{u_irq/ev_d[3]}}
+set_db -quiet inst:uart_top/u_irq/ev_d_reg_3 .single_bit_orig_name {u_irq/ev_d[3]}
+set_db -quiet pin:uart_top/u_irq/ev_d_reg_3/Q .original_name {u_irq/ev_d[3]/q}
+set_db -quiet pin:uart_top/u_irq/ev_d_reg_3/QN .original_name {u_irq/ev_d[3]/q}
+set_db -quiet inst:uart_top/u_irq/ev_d_reg_2 .orig_hdl_instantiated false
+set_db -quiet inst:uart_top/u_irq/ev_d_reg_2 .gint_phase_inversion false
+set_db -quiet inst:uart_top/u_irq/ev_d_reg_2 .original_name {{u_irq/ev_d[2]}}
+set_db -quiet inst:uart_top/u_irq/ev_d_reg_2 .single_bit_orig_name {u_irq/ev_d[2]}
+set_db -quiet pin:uart_top/u_irq/ev_d_reg_2/Q .original_name {u_irq/ev_d[2]/q}
+set_db -quiet pin:uart_top/u_irq/ev_d_reg_2/QN .original_name {u_irq/ev_d[2]/q}
+set_db -quiet inst:uart_top/u_irq/ev_d_reg_5 .orig_hdl_instantiated false
+set_db -quiet inst:uart_top/u_irq/ev_d_reg_5 .gint_phase_inversion false
+set_db -quiet inst:uart_top/u_irq/ev_d_reg_5 .original_name {{u_irq/ev_d[5]}}
+set_db -quiet inst:uart_top/u_irq/ev_d_reg_5 .single_bit_orig_name {u_irq/ev_d[5]}
+set_db -quiet pin:uart_top/u_irq/ev_d_reg_5/Q .original_name {u_irq/ev_d[5]/q}
+set_db -quiet pin:uart_top/u_irq/ev_d_reg_5/QN .original_name {u_irq/ev_d[5]/q}
 set_db -quiet module:uart_top/uart_rx_DATA_WIDTH8_DEPTH16 .hdl_filelist {{default -v2001 {SYNTHESIS} {../RTL/uart_rx.v ../RTL/Sync_FIFO.v} {../RTL} {}}}
 set_db -quiet module:uart_top/uart_top_Sync_FIFO_DATA_WIDTH8_DEPTH16_1 .hdl_filelist {{default -v2001 {SYNTHESIS} {../RTL/Sync_FIFO.v} {../RTL} {}}}
 set_db -quiet inst:uart_top/u_rx/rx_fifo/mem_reg_0_0 .orig_hdl_instantiated false
@@ -1397,11 +1461,11 @@ set_db -quiet inst:uart_top/u_rx/rx_fifo/mem_reg_15_7 .gint_phase_inversion fals
 set_db -quiet inst:uart_top/u_rx/rx_fifo/mem_reg_15_7 .original_name {{u_rx/rx_fifo/mem[15][7]}}
 set_db -quiet inst:uart_top/u_rx/rx_fifo/mem_reg_15_7 .single_bit_orig_name {u_rx/rx_fifo/mem[15][7]}
 set_db -quiet pin:uart_top/u_rx/rx_fifo/mem_reg_15_7/Q .original_name {u_rx/rx_fifo/mem[15][7]/q}
-set_db -quiet inst:uart_top/u_rx/rx_fifo/rd_ptr_reg_1 .orig_hdl_instantiated false
-set_db -quiet inst:uart_top/u_rx/rx_fifo/rd_ptr_reg_1 .gint_phase_inversion false
-set_db -quiet inst:uart_top/u_rx/rx_fifo/rd_ptr_reg_1 .original_name {{u_rx/rx_fifo/rd_ptr[1]}}
-set_db -quiet inst:uart_top/u_rx/rx_fifo/rd_ptr_reg_1 .single_bit_orig_name {u_rx/rx_fifo/rd_ptr[1]}
-set_db -quiet pin:uart_top/u_rx/rx_fifo/rd_ptr_reg_1/Q .original_name {u_rx/rx_fifo/rd_ptr[1]/q}
+set_db -quiet inst:uart_top/u_rx/rx_fifo/rd_ptr_reg_0 .orig_hdl_instantiated false
+set_db -quiet inst:uart_top/u_rx/rx_fifo/rd_ptr_reg_0 .gint_phase_inversion false
+set_db -quiet inst:uart_top/u_rx/rx_fifo/rd_ptr_reg_0 .original_name {{u_rx/rx_fifo/rd_ptr[0]}}
+set_db -quiet inst:uart_top/u_rx/rx_fifo/rd_ptr_reg_0 .single_bit_orig_name {u_rx/rx_fifo/rd_ptr[0]}
+set_db -quiet pin:uart_top/u_rx/rx_fifo/rd_ptr_reg_0/Q .original_name {u_rx/rx_fifo/rd_ptr[0]/q}
 set_db -quiet inst:uart_top/u_rx/rx_fifo/rd_ptr_reg_2 .orig_hdl_instantiated false
 set_db -quiet inst:uart_top/u_rx/rx_fifo/rd_ptr_reg_2 .gint_phase_inversion false
 set_db -quiet inst:uart_top/u_rx/rx_fifo/rd_ptr_reg_2 .original_name {{u_rx/rx_fifo/rd_ptr[2]}}
@@ -1442,12 +1506,17 @@ set_db -quiet inst:uart_top/u_rx/rx_fifo/wr_ptr_reg_4 .gint_phase_inversion fals
 set_db -quiet inst:uart_top/u_rx/rx_fifo/wr_ptr_reg_4 .original_name {{u_rx/rx_fifo/wr_ptr[4]}}
 set_db -quiet inst:uart_top/u_rx/rx_fifo/wr_ptr_reg_4 .single_bit_orig_name {u_rx/rx_fifo/wr_ptr[4]}
 set_db -quiet pin:uart_top/u_rx/rx_fifo/wr_ptr_reg_4/Q .original_name {u_rx/rx_fifo/wr_ptr[4]/q}
-set_db -quiet inst:uart_top/u_rx/rx_fifo/rd_ptr_reg_0 .orig_hdl_instantiated false
-set_db -quiet inst:uart_top/u_rx/rx_fifo/rd_ptr_reg_0 .gint_phase_inversion false
-set_db -quiet inst:uart_top/u_rx/rx_fifo/rd_ptr_reg_0 .original_name {{u_rx/rx_fifo/rd_ptr[0]}}
-set_db -quiet inst:uart_top/u_rx/rx_fifo/rd_ptr_reg_0 .single_bit_orig_name {u_rx/rx_fifo/rd_ptr[0]}
-set_db -quiet pin:uart_top/u_rx/rx_fifo/rd_ptr_reg_0/Q .original_name {u_rx/rx_fifo/rd_ptr[0]/q}
-set_db -quiet pin:uart_top/u_rx/rx_fifo/rd_ptr_reg_0/QN .original_name {u_rx/rx_fifo/rd_ptr[0]/q}
+set_db -quiet inst:uart_top/u_rx/rx_fifo/rd_ptr_reg_1 .orig_hdl_instantiated false
+set_db -quiet inst:uart_top/u_rx/rx_fifo/rd_ptr_reg_1 .gint_phase_inversion false
+set_db -quiet inst:uart_top/u_rx/rx_fifo/rd_ptr_reg_1 .original_name {{u_rx/rx_fifo/rd_ptr[1]}}
+set_db -quiet inst:uart_top/u_rx/rx_fifo/rd_ptr_reg_1 .single_bit_orig_name {u_rx/rx_fifo/rd_ptr[1]}
+set_db -quiet pin:uart_top/u_rx/rx_fifo/rd_ptr_reg_1/Q .original_name {u_rx/rx_fifo/rd_ptr[1]/q}
+set_db -quiet pin:uart_top/u_rx/rx_fifo/rd_ptr_reg_1/QN .original_name {u_rx/rx_fifo/rd_ptr[1]/q}
+set_db -quiet inst:uart_top/u_rx/parity_err_reg .orig_hdl_instantiated false
+set_db -quiet inst:uart_top/u_rx/parity_err_reg .gint_phase_inversion false
+set_db -quiet inst:uart_top/u_rx/parity_err_reg .original_name u_rx/parity_err
+set_db -quiet inst:uart_top/u_rx/parity_err_reg .single_bit_orig_name u_rx/parity_err
+set_db -quiet pin:uart_top/u_rx/parity_err_reg/Q .original_name u_rx/parity_err/q
 set_db -quiet inst:uart_top/u_rx/fifo_wr_en_reg .orig_hdl_instantiated false
 set_db -quiet inst:uart_top/u_rx/fifo_wr_en_reg .gint_phase_inversion false
 set_db -quiet inst:uart_top/u_rx/fifo_wr_en_reg .original_name u_rx/fifo_wr_en
@@ -1458,19 +1527,11 @@ set_db -quiet inst:uart_top/u_rx/overrun_err_reg .gint_phase_inversion false
 set_db -quiet inst:uart_top/u_rx/overrun_err_reg .original_name u_rx/overrun_err
 set_db -quiet inst:uart_top/u_rx/overrun_err_reg .single_bit_orig_name u_rx/overrun_err
 set_db -quiet pin:uart_top/u_rx/overrun_err_reg/Q .original_name u_rx/overrun_err/q
-set_db -quiet pin:uart_top/u_rx/overrun_err_reg/Q .dont_touch false
-set_db -quiet inst:uart_top/u_rx/parity_err_reg .orig_hdl_instantiated false
-set_db -quiet inst:uart_top/u_rx/parity_err_reg .gint_phase_inversion false
-set_db -quiet inst:uart_top/u_rx/parity_err_reg .original_name u_rx/parity_err
-set_db -quiet inst:uart_top/u_rx/parity_err_reg .single_bit_orig_name u_rx/parity_err
-set_db -quiet pin:uart_top/u_rx/parity_err_reg/Q .original_name u_rx/parity_err/q
-set_db -quiet pin:uart_top/u_rx/parity_err_reg/Q .dont_touch false
 set_db -quiet inst:uart_top/u_rx/frame_err_reg .orig_hdl_instantiated false
 set_db -quiet inst:uart_top/u_rx/frame_err_reg .gint_phase_inversion false
 set_db -quiet inst:uart_top/u_rx/frame_err_reg .original_name u_rx/frame_err
 set_db -quiet inst:uart_top/u_rx/frame_err_reg .single_bit_orig_name u_rx/frame_err
 set_db -quiet pin:uart_top/u_rx/frame_err_reg/Q .original_name u_rx/frame_err/q
-set_db -quiet pin:uart_top/u_rx/frame_err_reg/Q .dont_touch false
 set_db -quiet inst:uart_top/u_rx/rx_sync2_reg .orig_hdl_instantiated false
 set_db -quiet inst:uart_top/u_rx/rx_sync2_reg .gint_phase_inversion false
 set_db -quiet inst:uart_top/u_rx/rx_sync2_reg .original_name u_rx/rx_sync2
@@ -2284,11 +2345,6 @@ set_db -quiet inst:uart_top/u_tx/tx_fifo/rd_ptr_reg_0 .gint_phase_inversion fals
 set_db -quiet inst:uart_top/u_tx/tx_fifo/rd_ptr_reg_0 .original_name {{u_tx/tx_fifo/rd_ptr[0]}}
 set_db -quiet inst:uart_top/u_tx/tx_fifo/rd_ptr_reg_0 .single_bit_orig_name {u_tx/tx_fifo/rd_ptr[0]}
 set_db -quiet pin:uart_top/u_tx/tx_fifo/rd_ptr_reg_0/Q .original_name {u_tx/tx_fifo/rd_ptr[0]/q}
-set_db -quiet inst:uart_top/u_tx/tx_fifo/rd_ptr_reg_1 .orig_hdl_instantiated false
-set_db -quiet inst:uart_top/u_tx/tx_fifo/rd_ptr_reg_1 .gint_phase_inversion false
-set_db -quiet inst:uart_top/u_tx/tx_fifo/rd_ptr_reg_1 .original_name {{u_tx/tx_fifo/rd_ptr[1]}}
-set_db -quiet inst:uart_top/u_tx/tx_fifo/rd_ptr_reg_1 .single_bit_orig_name {u_tx/tx_fifo/rd_ptr[1]}
-set_db -quiet pin:uart_top/u_tx/tx_fifo/rd_ptr_reg_1/Q .original_name {u_tx/tx_fifo/rd_ptr[1]/q}
 set_db -quiet inst:uart_top/u_tx/tx_fifo/rd_ptr_reg_2 .orig_hdl_instantiated false
 set_db -quiet inst:uart_top/u_tx/tx_fifo/rd_ptr_reg_2 .gint_phase_inversion false
 set_db -quiet inst:uart_top/u_tx/tx_fifo/rd_ptr_reg_2 .original_name {{u_tx/tx_fifo/rd_ptr[2]}}
@@ -2304,33 +2360,37 @@ set_db -quiet inst:uart_top/u_tx/tx_fifo/rd_ptr_reg_4 .gint_phase_inversion fals
 set_db -quiet inst:uart_top/u_tx/tx_fifo/rd_ptr_reg_4 .original_name {{u_tx/tx_fifo/rd_ptr[4]}}
 set_db -quiet inst:uart_top/u_tx/tx_fifo/rd_ptr_reg_4 .single_bit_orig_name {u_tx/tx_fifo/rd_ptr[4]}
 set_db -quiet pin:uart_top/u_tx/tx_fifo/rd_ptr_reg_4/Q .original_name {u_tx/tx_fifo/rd_ptr[4]/q}
-set_db -quiet inst:uart_top/u_tx/tx_fifo/wr_ptr_reg_1 .orig_hdl_instantiated false
-set_db -quiet inst:uart_top/u_tx/tx_fifo/wr_ptr_reg_1 .gint_phase_inversion false
-set_db -quiet inst:uart_top/u_tx/tx_fifo/wr_ptr_reg_1 .original_name {{u_tx/tx_fifo/wr_ptr[1]}}
-set_db -quiet inst:uart_top/u_tx/tx_fifo/wr_ptr_reg_1 .single_bit_orig_name {u_tx/tx_fifo/wr_ptr[1]}
-set_db -quiet pin:uart_top/u_tx/tx_fifo/wr_ptr_reg_1/Q .original_name {u_tx/tx_fifo/wr_ptr[1]/q}
-set_db -quiet inst:uart_top/u_tx/tx_fifo/wr_ptr_reg_4 .orig_hdl_instantiated false
-set_db -quiet inst:uart_top/u_tx/tx_fifo/wr_ptr_reg_4 .gint_phase_inversion false
-set_db -quiet inst:uart_top/u_tx/tx_fifo/wr_ptr_reg_4 .original_name {{u_tx/tx_fifo/wr_ptr[4]}}
-set_db -quiet inst:uart_top/u_tx/tx_fifo/wr_ptr_reg_4 .single_bit_orig_name {u_tx/tx_fifo/wr_ptr[4]}
-set_db -quiet pin:uart_top/u_tx/tx_fifo/wr_ptr_reg_4/Q .original_name {u_tx/tx_fifo/wr_ptr[4]/q}
-set_db -quiet inst:uart_top/u_tx/tx_fifo/wr_ptr_reg_2 .orig_hdl_instantiated false
-set_db -quiet inst:uart_top/u_tx/tx_fifo/wr_ptr_reg_2 .gint_phase_inversion false
-set_db -quiet inst:uart_top/u_tx/tx_fifo/wr_ptr_reg_2 .original_name {{u_tx/tx_fifo/wr_ptr[2]}}
-set_db -quiet inst:uart_top/u_tx/tx_fifo/wr_ptr_reg_2 .single_bit_orig_name {u_tx/tx_fifo/wr_ptr[2]}
-set_db -quiet pin:uart_top/u_tx/tx_fifo/wr_ptr_reg_2/Q .original_name {u_tx/tx_fifo/wr_ptr[2]/q}
-set_db -quiet pin:uart_top/u_tx/tx_fifo/wr_ptr_reg_2/QN .original_name {u_tx/tx_fifo/wr_ptr[2]/q}
 set_db -quiet inst:uart_top/u_tx/tx_fifo/wr_ptr_reg_0 .orig_hdl_instantiated false
 set_db -quiet inst:uart_top/u_tx/tx_fifo/wr_ptr_reg_0 .gint_phase_inversion false
 set_db -quiet inst:uart_top/u_tx/tx_fifo/wr_ptr_reg_0 .original_name {{u_tx/tx_fifo/wr_ptr[0]}}
 set_db -quiet inst:uart_top/u_tx/tx_fifo/wr_ptr_reg_0 .single_bit_orig_name {u_tx/tx_fifo/wr_ptr[0]}
 set_db -quiet pin:uart_top/u_tx/tx_fifo/wr_ptr_reg_0/Q .original_name {u_tx/tx_fifo/wr_ptr[0]/q}
-set_db -quiet pin:uart_top/u_tx/tx_fifo/wr_ptr_reg_0/QN .original_name {u_tx/tx_fifo/wr_ptr[0]/q}
+set_db -quiet inst:uart_top/u_tx/tx_fifo/wr_ptr_reg_1 .orig_hdl_instantiated false
+set_db -quiet inst:uart_top/u_tx/tx_fifo/wr_ptr_reg_1 .gint_phase_inversion false
+set_db -quiet inst:uart_top/u_tx/tx_fifo/wr_ptr_reg_1 .original_name {{u_tx/tx_fifo/wr_ptr[1]}}
+set_db -quiet inst:uart_top/u_tx/tx_fifo/wr_ptr_reg_1 .single_bit_orig_name {u_tx/tx_fifo/wr_ptr[1]}
+set_db -quiet pin:uart_top/u_tx/tx_fifo/wr_ptr_reg_1/Q .original_name {u_tx/tx_fifo/wr_ptr[1]/q}
+set_db -quiet inst:uart_top/u_tx/tx_fifo/wr_ptr_reg_2 .orig_hdl_instantiated false
+set_db -quiet inst:uart_top/u_tx/tx_fifo/wr_ptr_reg_2 .gint_phase_inversion false
+set_db -quiet inst:uart_top/u_tx/tx_fifo/wr_ptr_reg_2 .original_name {{u_tx/tx_fifo/wr_ptr[2]}}
+set_db -quiet inst:uart_top/u_tx/tx_fifo/wr_ptr_reg_2 .single_bit_orig_name {u_tx/tx_fifo/wr_ptr[2]}
+set_db -quiet pin:uart_top/u_tx/tx_fifo/wr_ptr_reg_2/Q .original_name {u_tx/tx_fifo/wr_ptr[2]/q}
 set_db -quiet inst:uart_top/u_tx/tx_fifo/wr_ptr_reg_3 .orig_hdl_instantiated false
 set_db -quiet inst:uart_top/u_tx/tx_fifo/wr_ptr_reg_3 .gint_phase_inversion false
 set_db -quiet inst:uart_top/u_tx/tx_fifo/wr_ptr_reg_3 .original_name {{u_tx/tx_fifo/wr_ptr[3]}}
 set_db -quiet inst:uart_top/u_tx/tx_fifo/wr_ptr_reg_3 .single_bit_orig_name {u_tx/tx_fifo/wr_ptr[3]}
 set_db -quiet pin:uart_top/u_tx/tx_fifo/wr_ptr_reg_3/Q .original_name {u_tx/tx_fifo/wr_ptr[3]/q}
+set_db -quiet inst:uart_top/u_tx/tx_fifo/wr_ptr_reg_4 .orig_hdl_instantiated false
+set_db -quiet inst:uart_top/u_tx/tx_fifo/wr_ptr_reg_4 .gint_phase_inversion false
+set_db -quiet inst:uart_top/u_tx/tx_fifo/wr_ptr_reg_4 .original_name {{u_tx/tx_fifo/wr_ptr[4]}}
+set_db -quiet inst:uart_top/u_tx/tx_fifo/wr_ptr_reg_4 .single_bit_orig_name {u_tx/tx_fifo/wr_ptr[4]}
+set_db -quiet pin:uart_top/u_tx/tx_fifo/wr_ptr_reg_4/Q .original_name {u_tx/tx_fifo/wr_ptr[4]/q}
+set_db -quiet inst:uart_top/u_tx/tx_fifo/rd_ptr_reg_1 .orig_hdl_instantiated false
+set_db -quiet inst:uart_top/u_tx/tx_fifo/rd_ptr_reg_1 .gint_phase_inversion false
+set_db -quiet inst:uart_top/u_tx/tx_fifo/rd_ptr_reg_1 .original_name {{u_tx/tx_fifo/rd_ptr[1]}}
+set_db -quiet inst:uart_top/u_tx/tx_fifo/rd_ptr_reg_1 .single_bit_orig_name {u_tx/tx_fifo/rd_ptr[1]}
+set_db -quiet pin:uart_top/u_tx/tx_fifo/rd_ptr_reg_1/Q .original_name {u_tx/tx_fifo/rd_ptr[1]/q}
+set_db -quiet pin:uart_top/u_tx/tx_fifo/rd_ptr_reg_1/QN .original_name {u_tx/tx_fifo/rd_ptr[1]/q}
 set_db -quiet inst:uart_top/u_tx/tx_reg .orig_hdl_instantiated false
 set_db -quiet inst:uart_top/u_tx/tx_reg .gint_phase_inversion false
 set_db -quiet inst:uart_top/u_tx/tx_reg .original_name u_tx/tx
@@ -2342,12 +2402,26 @@ set_db -quiet inst:uart_top/u_tx/tx_done_reg .gint_phase_inversion false
 set_db -quiet inst:uart_top/u_tx/tx_done_reg .original_name u_tx/tx_done
 set_db -quiet inst:uart_top/u_tx/tx_done_reg .single_bit_orig_name u_tx/tx_done
 set_db -quiet pin:uart_top/u_tx/tx_done_reg/Q .original_name u_tx/tx_done/q
-set_db -quiet pin:uart_top/u_tx/tx_done_reg/Q .dont_touch false
 set_db -quiet inst:uart_top/u_tx/tx_parity_bit_reg .orig_hdl_instantiated false
 set_db -quiet inst:uart_top/u_tx/tx_parity_bit_reg .gint_phase_inversion false
 set_db -quiet inst:uart_top/u_tx/tx_parity_bit_reg .original_name u_tx/tx_parity_bit
 set_db -quiet inst:uart_top/u_tx/tx_parity_bit_reg .single_bit_orig_name u_tx/tx_parity_bit
 set_db -quiet pin:uart_top/u_tx/tx_parity_bit_reg/Q .original_name u_tx/tx_parity_bit/q
+set_db -quiet inst:uart_top/u_tx/state_reg_0 .orig_hdl_instantiated false
+set_db -quiet inst:uart_top/u_tx/state_reg_0 .gint_phase_inversion false
+set_db -quiet inst:uart_top/u_tx/state_reg_0 .original_name {{u_tx/state[0]}}
+set_db -quiet inst:uart_top/u_tx/state_reg_0 .single_bit_orig_name {u_tx/state[0]}
+set_db -quiet pin:uart_top/u_tx/state_reg_0/Q .original_name {u_tx/state[0]/q}
+set_db -quiet inst:uart_top/u_tx/tx_data_reg_reg_5 .orig_hdl_instantiated false
+set_db -quiet inst:uart_top/u_tx/tx_data_reg_reg_5 .gint_phase_inversion false
+set_db -quiet inst:uart_top/u_tx/tx_data_reg_reg_5 .original_name {{u_tx/tx_data_reg[5]}}
+set_db -quiet inst:uart_top/u_tx/tx_data_reg_reg_5 .single_bit_orig_name {u_tx/tx_data_reg[5]}
+set_db -quiet pin:uart_top/u_tx/tx_data_reg_reg_5/Q .original_name {u_tx/tx_data_reg[5]/q}
+set_db -quiet inst:uart_top/u_tx/tx_data_reg_reg_1 .orig_hdl_instantiated false
+set_db -quiet inst:uart_top/u_tx/tx_data_reg_reg_1 .gint_phase_inversion false
+set_db -quiet inst:uart_top/u_tx/tx_data_reg_reg_1 .original_name {{u_tx/tx_data_reg[1]}}
+set_db -quiet inst:uart_top/u_tx/tx_data_reg_reg_1 .single_bit_orig_name {u_tx/tx_data_reg[1]}
+set_db -quiet pin:uart_top/u_tx/tx_data_reg_reg_1/Q .original_name {u_tx/tx_data_reg[1]/q}
 set_db -quiet inst:uart_top/u_tx/tx_data_reg_reg_2 .orig_hdl_instantiated false
 set_db -quiet inst:uart_top/u_tx/tx_data_reg_reg_2 .gint_phase_inversion false
 set_db -quiet inst:uart_top/u_tx/tx_data_reg_reg_2 .original_name {{u_tx/tx_data_reg[2]}}
@@ -2358,11 +2432,11 @@ set_db -quiet inst:uart_top/u_tx/tx_data_reg_reg_3 .gint_phase_inversion false
 set_db -quiet inst:uart_top/u_tx/tx_data_reg_reg_3 .original_name {{u_tx/tx_data_reg[3]}}
 set_db -quiet inst:uart_top/u_tx/tx_data_reg_reg_3 .single_bit_orig_name {u_tx/tx_data_reg[3]}
 set_db -quiet pin:uart_top/u_tx/tx_data_reg_reg_3/Q .original_name {u_tx/tx_data_reg[3]/q}
-set_db -quiet inst:uart_top/u_tx/tx_data_reg_reg_5 .orig_hdl_instantiated false
-set_db -quiet inst:uart_top/u_tx/tx_data_reg_reg_5 .gint_phase_inversion false
-set_db -quiet inst:uart_top/u_tx/tx_data_reg_reg_5 .original_name {{u_tx/tx_data_reg[5]}}
-set_db -quiet inst:uart_top/u_tx/tx_data_reg_reg_5 .single_bit_orig_name {u_tx/tx_data_reg[5]}
-set_db -quiet pin:uart_top/u_tx/tx_data_reg_reg_5/Q .original_name {u_tx/tx_data_reg[5]/q}
+set_db -quiet inst:uart_top/u_tx/tx_data_reg_reg_4 .orig_hdl_instantiated false
+set_db -quiet inst:uart_top/u_tx/tx_data_reg_reg_4 .gint_phase_inversion false
+set_db -quiet inst:uart_top/u_tx/tx_data_reg_reg_4 .original_name {{u_tx/tx_data_reg[4]}}
+set_db -quiet inst:uart_top/u_tx/tx_data_reg_reg_4 .single_bit_orig_name {u_tx/tx_data_reg[4]}
+set_db -quiet pin:uart_top/u_tx/tx_data_reg_reg_4/Q .original_name {u_tx/tx_data_reg[4]/q}
 set_db -quiet inst:uart_top/u_tx/tx_data_reg_reg_6 .orig_hdl_instantiated false
 set_db -quiet inst:uart_top/u_tx/tx_data_reg_reg_6 .gint_phase_inversion false
 set_db -quiet inst:uart_top/u_tx/tx_data_reg_reg_6 .original_name {{u_tx/tx_data_reg[6]}}
@@ -2373,52 +2447,40 @@ set_db -quiet inst:uart_top/u_tx/tx_data_reg_reg_0 .gint_phase_inversion false
 set_db -quiet inst:uart_top/u_tx/tx_data_reg_reg_0 .original_name {{u_tx/tx_data_reg[0]}}
 set_db -quiet inst:uart_top/u_tx/tx_data_reg_reg_0 .single_bit_orig_name {u_tx/tx_data_reg[0]}
 set_db -quiet pin:uart_top/u_tx/tx_data_reg_reg_0/Q .original_name {u_tx/tx_data_reg[0]/q}
-set_db -quiet inst:uart_top/u_tx/bit_cnt_reg_0 .orig_hdl_instantiated false
-set_db -quiet inst:uart_top/u_tx/bit_cnt_reg_0 .gint_phase_inversion false
-set_db -quiet inst:uart_top/u_tx/bit_cnt_reg_0 .original_name {{u_tx/bit_cnt[0]}}
-set_db -quiet inst:uart_top/u_tx/bit_cnt_reg_0 .single_bit_orig_name {u_tx/bit_cnt[0]}
-set_db -quiet pin:uart_top/u_tx/bit_cnt_reg_0/Q .original_name {u_tx/bit_cnt[0]/q}
-set_db -quiet inst:uart_top/u_tx/state_reg_1 .orig_hdl_instantiated false
-set_db -quiet inst:uart_top/u_tx/state_reg_1 .gint_phase_inversion false
-set_db -quiet inst:uart_top/u_tx/state_reg_1 .original_name {{u_tx/state[1]}}
-set_db -quiet inst:uart_top/u_tx/state_reg_1 .single_bit_orig_name {u_tx/state[1]}
-set_db -quiet pin:uart_top/u_tx/state_reg_1/Q .original_name {u_tx/state[1]/q}
 set_db -quiet inst:uart_top/u_tx/tx_data_reg_reg_7 .orig_hdl_instantiated false
 set_db -quiet inst:uart_top/u_tx/tx_data_reg_reg_7 .gint_phase_inversion false
 set_db -quiet inst:uart_top/u_tx/tx_data_reg_reg_7 .original_name {{u_tx/tx_data_reg[7]}}
 set_db -quiet inst:uart_top/u_tx/tx_data_reg_reg_7 .single_bit_orig_name {u_tx/tx_data_reg[7]}
 set_db -quiet pin:uart_top/u_tx/tx_data_reg_reg_7/Q .original_name {u_tx/tx_data_reg[7]/q}
-set_db -quiet inst:uart_top/u_tx/bit_cnt_reg_2 .orig_hdl_instantiated false
-set_db -quiet inst:uart_top/u_tx/bit_cnt_reg_2 .gint_phase_inversion false
-set_db -quiet inst:uart_top/u_tx/bit_cnt_reg_2 .original_name {{u_tx/bit_cnt[2]}}
-set_db -quiet inst:uart_top/u_tx/bit_cnt_reg_2 .single_bit_orig_name {u_tx/bit_cnt[2]}
-set_db -quiet pin:uart_top/u_tx/bit_cnt_reg_2/Q .original_name {u_tx/bit_cnt[2]/q}
-set_db -quiet inst:uart_top/u_tx/tx_data_reg_reg_4 .orig_hdl_instantiated false
-set_db -quiet inst:uart_top/u_tx/tx_data_reg_reg_4 .gint_phase_inversion false
-set_db -quiet inst:uart_top/u_tx/tx_data_reg_reg_4 .original_name {{u_tx/tx_data_reg[4]}}
-set_db -quiet inst:uart_top/u_tx/tx_data_reg_reg_4 .single_bit_orig_name {u_tx/tx_data_reg[4]}
-set_db -quiet pin:uart_top/u_tx/tx_data_reg_reg_4/Q .original_name {u_tx/tx_data_reg[4]/q}
+set_db -quiet inst:uart_top/u_tx/state_reg_1 .orig_hdl_instantiated false
+set_db -quiet inst:uart_top/u_tx/state_reg_1 .gint_phase_inversion false
+set_db -quiet inst:uart_top/u_tx/state_reg_1 .original_name {{u_tx/state[1]}}
+set_db -quiet inst:uart_top/u_tx/state_reg_1 .single_bit_orig_name {u_tx/state[1]}
+set_db -quiet pin:uart_top/u_tx/state_reg_1/Q .original_name {u_tx/state[1]/q}
 set_db -quiet inst:uart_top/u_tx/bit_cnt_reg_1 .orig_hdl_instantiated false
 set_db -quiet inst:uart_top/u_tx/bit_cnt_reg_1 .gint_phase_inversion false
 set_db -quiet inst:uart_top/u_tx/bit_cnt_reg_1 .original_name {{u_tx/bit_cnt[1]}}
 set_db -quiet inst:uart_top/u_tx/bit_cnt_reg_1 .single_bit_orig_name {u_tx/bit_cnt[1]}
 set_db -quiet pin:uart_top/u_tx/bit_cnt_reg_1/Q .original_name {u_tx/bit_cnt[1]/q}
-set_db -quiet inst:uart_top/u_tx/state_reg_0 .orig_hdl_instantiated false
-set_db -quiet inst:uart_top/u_tx/state_reg_0 .gint_phase_inversion false
-set_db -quiet inst:uart_top/u_tx/state_reg_0 .original_name {{u_tx/state[0]}}
-set_db -quiet inst:uart_top/u_tx/state_reg_0 .single_bit_orig_name {u_tx/state[0]}
-set_db -quiet pin:uart_top/u_tx/state_reg_0/Q .original_name {u_tx/state[0]/q}
+set_db -quiet pin:uart_top/u_tx/bit_cnt_reg_1/QN .original_name {u_tx/bit_cnt[1]/q}
+set_db -quiet inst:uart_top/u_tx/bit_cnt_reg_0 .orig_hdl_instantiated false
+set_db -quiet inst:uart_top/u_tx/bit_cnt_reg_0 .gint_phase_inversion false
+set_db -quiet inst:uart_top/u_tx/bit_cnt_reg_0 .original_name {{u_tx/bit_cnt[0]}}
+set_db -quiet inst:uart_top/u_tx/bit_cnt_reg_0 .single_bit_orig_name {u_tx/bit_cnt[0]}
+set_db -quiet pin:uart_top/u_tx/bit_cnt_reg_0/Q .original_name {u_tx/bit_cnt[0]/q}
+set_db -quiet pin:uart_top/u_tx/bit_cnt_reg_0/QN .original_name {u_tx/bit_cnt[0]/q}
+set_db -quiet inst:uart_top/u_tx/bit_cnt_reg_2 .orig_hdl_instantiated false
+set_db -quiet inst:uart_top/u_tx/bit_cnt_reg_2 .gint_phase_inversion false
+set_db -quiet inst:uart_top/u_tx/bit_cnt_reg_2 .original_name {{u_tx/bit_cnt[2]}}
+set_db -quiet inst:uart_top/u_tx/bit_cnt_reg_2 .single_bit_orig_name {u_tx/bit_cnt[2]}
+set_db -quiet pin:uart_top/u_tx/bit_cnt_reg_2/Q .original_name {u_tx/bit_cnt[2]/q}
+set_db -quiet pin:uart_top/u_tx/bit_cnt_reg_2/QN .original_name {u_tx/bit_cnt[2]/q}
 set_db -quiet inst:uart_top/u_tx/state_reg_2 .orig_hdl_instantiated false
 set_db -quiet inst:uart_top/u_tx/state_reg_2 .gint_phase_inversion false
 set_db -quiet inst:uart_top/u_tx/state_reg_2 .original_name {{u_tx/state[2]}}
 set_db -quiet inst:uart_top/u_tx/state_reg_2 .single_bit_orig_name {u_tx/state[2]}
 set_db -quiet pin:uart_top/u_tx/state_reg_2/Q .original_name {u_tx/state[2]/q}
-set_db -quiet inst:uart_top/u_tx/tx_data_reg_reg_1 .orig_hdl_instantiated false
-set_db -quiet inst:uart_top/u_tx/tx_data_reg_reg_1 .gint_phase_inversion false
-set_db -quiet inst:uart_top/u_tx/tx_data_reg_reg_1 .original_name {{u_tx/tx_data_reg[1]}}
-set_db -quiet inst:uart_top/u_tx/tx_data_reg_reg_1 .single_bit_orig_name {u_tx/tx_data_reg[1]}
-set_db -quiet pin:uart_top/u_tx/tx_data_reg_reg_1/Q .original_name {u_tx/tx_data_reg[1]/q}
-set_db -quiet pin:uart_top/u_tx/tx_data_reg_reg_1/QN .original_name {u_tx/tx_data_reg[1]/q}
+set_db -quiet pin:uart_top/u_tx/state_reg_2/QN .original_name {u_tx/state[2]/q}
 # BEGIN PMBIST SECTION
 # END PMBIST SECTION
 # BEGIN PHYSICAL ANNOTATION SECTION
@@ -2433,7 +2495,7 @@ set_db -quiet source_verbose true
 ##
 ## Written by Genus(TM) Synthesis Solution version 22.17-s071_1
 ## flowkit v22.15-s003_1
-## Written on 11:59:34 16-Oct 2026
+## Written on 01:46:34 21-Oct 2026
 #############################################################
 #####   Flow Definitions   ##################################
 

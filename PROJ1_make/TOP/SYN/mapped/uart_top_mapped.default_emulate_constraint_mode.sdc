@@ -1,6 +1,6 @@
 # ####################################################################
 
-#  Created by Genus(TM) Synthesis Solution 22.17-s071_1 on Fri Oct 16 11:59:35 KST 2026
+#  Created by Genus(TM) Synthesis Solution 22.17-s071_1 on Wed Oct 21 01:46:35 KST 2026
 
 # ####################################################################
 
@@ -27,6 +27,7 @@ set_load -pin_load 0.003 [get_ports {isr[2]}]
 set_load -pin_load 0.003 [get_ports {isr[1]}]
 set_load -pin_load 0.003 [get_ports {isr[0]}]
 set_load -pin_load 0.003 [get_ports irq]
+set_load -pin_load 0.003 [get_ports tx_done]
 set_load -pin_load 0.003 [get_ports rx_valid]
 set_load -pin_load 0.003 [get_ports {rx_data[7]}]
 set_load -pin_load 0.003 [get_ports {rx_data[6]}]
@@ -58,7 +59,6 @@ set_input_delay -clock [get_clocks MAIN_CLOCK] -add_delay -max 0.1 [get_ports {t
 set_input_delay -clock [get_clocks MAIN_CLOCK] -add_delay -max 0.1 [get_ports tx_valid]
 set_input_delay -clock [get_clocks MAIN_CLOCK] -add_delay -max 0.1 [get_ports rx]
 set_input_delay -clock [get_clocks MAIN_CLOCK] -add_delay -max 0.1 [get_ports rx_ready]
-set_input_delay -clock [get_clocks MAIN_CLOCK] -add_delay -max 0.1 [get_ports tx_done]
 set_input_delay -clock [get_clocks MAIN_CLOCK] -add_delay -max 0.1 [get_ports ier_we]
 set_input_delay -clock [get_clocks MAIN_CLOCK] -add_delay -max 0.1 [get_ports {ier_wdata[5]}]
 set_input_delay -clock [get_clocks MAIN_CLOCK] -add_delay -max 0.1 [get_ports {ier_wdata[4]}]
@@ -71,8 +71,6 @@ set_input_delay -clock [get_clocks MAIN_CLOCK] -add_delay -max 0.1 [get_ports {i
 set_input_delay -clock [get_clocks MAIN_CLOCK] -add_delay -max 0.1 [get_ports {isr_clr_data[4]}]
 set_input_delay -clock [get_clocks MAIN_CLOCK] -add_delay -max 0.1 [get_ports {isr_clr_data[3]}]
 set_input_delay -clock [get_clocks MAIN_CLOCK] -add_delay -max 0.1 [get_ports {isr_clr_data[2]}]
-set_input_delay -clock [get_clocks MAIN_CLOCK] -add_delay -max 0.1 [get_ports {isr_clr_data[1]}]
-set_input_delay -clock [get_clocks MAIN_CLOCK] -add_delay -max 0.1 [get_ports {isr_clr_data[0]}]
 set_input_delay -clock [get_clocks MAIN_CLOCK] -add_delay -min 0.01 [get_ports rst_n]
 set_input_delay -clock [get_clocks MAIN_CLOCK] -add_delay -min 0.01 [get_ports {tx_data[7]}]
 set_input_delay -clock [get_clocks MAIN_CLOCK] -add_delay -min 0.01 [get_ports {tx_data[6]}]
@@ -85,7 +83,6 @@ set_input_delay -clock [get_clocks MAIN_CLOCK] -add_delay -min 0.01 [get_ports {
 set_input_delay -clock [get_clocks MAIN_CLOCK] -add_delay -min 0.01 [get_ports tx_valid]
 set_input_delay -clock [get_clocks MAIN_CLOCK] -add_delay -min 0.01 [get_ports rx]
 set_input_delay -clock [get_clocks MAIN_CLOCK] -add_delay -min 0.01 [get_ports rx_ready]
-set_input_delay -clock [get_clocks MAIN_CLOCK] -add_delay -min 0.01 [get_ports tx_done]
 set_input_delay -clock [get_clocks MAIN_CLOCK] -add_delay -min 0.01 [get_ports ier_we]
 set_input_delay -clock [get_clocks MAIN_CLOCK] -add_delay -min 0.01 [get_ports {ier_wdata[5]}]
 set_input_delay -clock [get_clocks MAIN_CLOCK] -add_delay -min 0.01 [get_ports {ier_wdata[4]}]
@@ -98,8 +95,6 @@ set_input_delay -clock [get_clocks MAIN_CLOCK] -add_delay -min 0.01 [get_ports {
 set_input_delay -clock [get_clocks MAIN_CLOCK] -add_delay -min 0.01 [get_ports {isr_clr_data[4]}]
 set_input_delay -clock [get_clocks MAIN_CLOCK] -add_delay -min 0.01 [get_ports {isr_clr_data[3]}]
 set_input_delay -clock [get_clocks MAIN_CLOCK] -add_delay -min 0.01 [get_ports {isr_clr_data[2]}]
-set_input_delay -clock [get_clocks MAIN_CLOCK] -add_delay -min 0.01 [get_ports {isr_clr_data[1]}]
-set_input_delay -clock [get_clocks MAIN_CLOCK] -add_delay -min 0.01 [get_ports {isr_clr_data[0]}]
 set_output_delay -clock [get_clocks MAIN_CLOCK] -add_delay -max 0.1 [get_ports {ier[5]}]
 set_output_delay -clock [get_clocks MAIN_CLOCK] -add_delay -max 0.1 [get_ports {ier[4]}]
 set_output_delay -clock [get_clocks MAIN_CLOCK] -add_delay -max 0.1 [get_ports {ier[3]}]
@@ -113,6 +108,7 @@ set_output_delay -clock [get_clocks MAIN_CLOCK] -add_delay -max 0.1 [get_ports {
 set_output_delay -clock [get_clocks MAIN_CLOCK] -add_delay -max 0.1 [get_ports {isr[1]}]
 set_output_delay -clock [get_clocks MAIN_CLOCK] -add_delay -max 0.1 [get_ports {isr[0]}]
 set_output_delay -clock [get_clocks MAIN_CLOCK] -add_delay -max 0.1 [get_ports irq]
+set_output_delay -clock [get_clocks MAIN_CLOCK] -add_delay -max 0.1 [get_ports tx_done]
 set_output_delay -clock [get_clocks MAIN_CLOCK] -add_delay -max 0.1 [get_ports rx_valid]
 set_output_delay -clock [get_clocks MAIN_CLOCK] -add_delay -max 0.1 [get_ports {rx_data[7]}]
 set_output_delay -clock [get_clocks MAIN_CLOCK] -add_delay -max 0.1 [get_ports {rx_data[6]}]
@@ -144,6 +140,7 @@ set_output_delay -clock [get_clocks MAIN_CLOCK] -add_delay -min -0.01 [get_ports
 set_output_delay -clock [get_clocks MAIN_CLOCK] -add_delay -min -0.01 [get_ports {isr[1]}]
 set_output_delay -clock [get_clocks MAIN_CLOCK] -add_delay -min -0.01 [get_ports {isr[0]}]
 set_output_delay -clock [get_clocks MAIN_CLOCK] -add_delay -min -0.01 [get_ports irq]
+set_output_delay -clock [get_clocks MAIN_CLOCK] -add_delay -min -0.01 [get_ports tx_done]
 set_output_delay -clock [get_clocks MAIN_CLOCK] -add_delay -min -0.01 [get_ports rx_valid]
 set_output_delay -clock [get_clocks MAIN_CLOCK] -add_delay -min -0.01 [get_ports {rx_data[7]}]
 set_output_delay -clock [get_clocks MAIN_CLOCK] -add_delay -min -0.01 [get_ports {rx_data[6]}]
@@ -175,7 +172,6 @@ set_driving_cell -lib_cell PADDI -library giolib045 -pin "Y" [get_ports {tx_data
 set_driving_cell -lib_cell PADDI -library giolib045 -pin "Y" [get_ports tx_valid]
 set_driving_cell -lib_cell PADDI -library giolib045 -pin "Y" [get_ports rx]
 set_driving_cell -lib_cell PADDI -library giolib045 -pin "Y" [get_ports rx_ready]
-set_driving_cell -lib_cell PADDI -library giolib045 -pin "Y" [get_ports tx_done]
 set_driving_cell -lib_cell PADDI -library giolib045 -pin "Y" [get_ports ier_we]
 set_driving_cell -lib_cell PADDI -library giolib045 -pin "Y" [get_ports {ier_wdata[5]}]
 set_driving_cell -lib_cell PADDI -library giolib045 -pin "Y" [get_ports {ier_wdata[4]}]
@@ -188,8 +184,6 @@ set_driving_cell -lib_cell PADDI -library giolib045 -pin "Y" [get_ports {isr_clr
 set_driving_cell -lib_cell PADDI -library giolib045 -pin "Y" [get_ports {isr_clr_data[4]}]
 set_driving_cell -lib_cell PADDI -library giolib045 -pin "Y" [get_ports {isr_clr_data[3]}]
 set_driving_cell -lib_cell PADDI -library giolib045 -pin "Y" [get_ports {isr_clr_data[2]}]
-set_driving_cell -lib_cell PADDI -library giolib045 -pin "Y" [get_ports {isr_clr_data[1]}]
-set_driving_cell -lib_cell PADDI -library giolib045 -pin "Y" [get_ports {isr_clr_data[0]}]
 set_ideal_network [get_ports clk]
 set_ideal_network [get_ports rst_n]
 set_dont_use true [get_lib_cells fast_vdd1v0/ANTENNA]

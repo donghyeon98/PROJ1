@@ -1,8 +1,8 @@
 `timescale 1ns / 1ps
 
 module tb_uart_top								;
-	parameter FPGA_CLK    = 160						;
-	parameter BAUD_RATE   = 10						;
+	parameter FPGA_CLK    = 100_000_000                             	;
+        parameter BAUD_RATE   = 115200                                  	;
 	parameter DATA_WIDTH  = 8						;
 	parameter DEPTH       = 16						;
 
@@ -18,7 +18,7 @@ module tb_uart_top								;
 	reg  ier_we				      				;
 	reg  [5:0] ier_wdata				      			;
 	reg  isr_clr_we								;
-	reg  [5:0] isr_clr_data							;
+	reg  [5:2] isr_clr_data							;
 	wire [5:0] ier								;
 	wire [5:0] isr								;
 	wire irq								;
@@ -37,11 +37,12 @@ module tb_uart_top								;
 
 	integer i				      				;
 
-	uart_top #(.FPGA_CLK(FPGA_CLK)	      	      				,
-	           .BAUD_RATE(BAUD_RATE)	      				,
-		   .DATA_WIDTH(DATA_WIDTH)	      				,
-	           .DEPTH(DEPTH))      
-	dut	  (	
+        uart_top #(.FPGA_CLK    (FPGA_CLK)                                      ,
+                   .BAUD_RATE   (BAUD_RATE)                                     ,
+                   .DATA_WIDTH  (DATA_WIDTH)                                    ,
+                   .DEPTH       (DEPTH))
+	
+	dut	  								(	
         .clk			(clk)                   			,
         .rst_n			(rst_n)                 			,
         .tx_data		(tx_data)               			,
@@ -75,7 +76,7 @@ module tb_uart_top								;
 		$dumpvars(0, tb_uart_top)					;
 		`endif
 	end
-	
+
 	initial begin
 		clk = 0				      				;
 		forever #5 clk = ~clk		      				;		
@@ -94,11 +95,11 @@ module tb_uart_top								;
 	task isr_clear(input [5:0] mask)					;
         begin
                 @(posedge clk)							;
-                isr_clr_data <= mask						;
+                isr_clr_data <= mask[5:2]					;
                 isr_clr_we   <= 1'b1						;
                 @(posedge clk)							;
                 isr_clr_we   <= 1'b0						;
-                isr_clr_data <= 6'b0						;
+                isr_clr_data <= 4'b0						;
         end
         endtask
 	
@@ -134,7 +135,7 @@ module tb_uart_top								;
 		ier_we       = 1'b0						;
     		ier_wdata    = 6'b0						;
     		isr_clr_we   = 1'b0						;
-    		isr_clr_data = 6'b0						;
+    		isr_clr_data = 4'b0						;
                 repeat (5) @(posedge clk)             				;
                 rst_n    = 1'b1                       				;
                 repeat (5) @(posedge clk)             				;

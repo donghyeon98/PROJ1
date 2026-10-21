@@ -12,7 +12,6 @@ parameter DEPTH = 16)
 	tx_valid					,
 	rx						,
 	rx_ready					,
-	tx_done						,
 	ier_we                                  	,
         ier_wdata                               	,
         isr_clr_we                              	,
@@ -20,6 +19,7 @@ parameter DEPTH = 16)
         ier                                     	,
         isr                                     	,
         irq						,
+	tx_done						,
 	rx_valid					,
 	rx_data						,
 	rx_full						,
@@ -38,15 +38,15 @@ parameter DEPTH = 16)
 	input  [DATA_WIDTH-1:0] tx_data                 ;
         input  tx_valid                                 ;
         input  rx                                       ;
-        input  rx_ready                                 ;
-	input  tx_done					;	
+        input  rx_ready                                 ;	
 	input  ier_we                     		;
         input  [5:0] ier_wdata                  	;
         input  isr_clr_we                 		;
-	input  [5:0] isr_clr_data               	;
+	input  [5:2] isr_clr_data               	;
         output [5:0] ier                        	;
         output [5:0] isr                        	;
         output irq                        		;
+	output tx_done					;
         output rx_valid                                 ;
         output [DATA_WIDTH-1:0] rx_data                 ;
         output rx_full                                  ;
@@ -63,7 +63,6 @@ parameter DEPTH = 16)
 	wire baud_tick					;
 	wire in_rx					;
 	wire out_tx					;
-	wire tx_done					;
 
 	baud_rate_gen #(.FPGA_CLK(FPGA_CLK), .BAUD_RATE(BAUD_RATE)) baud(     
 	.clk		(clk)				,

@@ -29,7 +29,7 @@ module uart_irq(
 	input ier_we								;
 	input [5:0] ier_wdata							;
 	input isr_clr_we							;
-	input [5:0] isr_clr_data						;
+	input [5:2] isr_clr_data						;
 	output [5:0] ier							;	// enable register
 	output [5:0] isr							;	// status register
 	output irq								;

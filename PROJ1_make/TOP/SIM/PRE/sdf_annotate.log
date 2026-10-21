@@ -1,0 +1,114 @@
+======================================================================
+
+Annotating SDF timing data:
+  Compiled SDF file:     uart_top_delays.sdf.X
+  Log file:              sdf_annotate.log
+  Backannotation scope:  tb_uart_top.dut
+  Configuration file:    
+  MTM control:           MAXIMUM
+  Scale factors:         
+  Scale type:            
+
+Time units: 1ns
+
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.baud.baud_tick_reg of module DFFRHQX1 <./uart_top_delays.sdf, line 26>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.baud.os_tick_cnt_reg_5 of module DFFRHQX1 <./uart_top_delays.sdf, line 147>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.baud.os_tick_cnt_reg_4 of module DFFRHQX1 <./uart_top_delays.sdf, line 180>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.baud.os_tick_cnt_reg_3 of module DFFRHQX1 <./uart_top_delays.sdf, line 239>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.baud.os_tick_cnt_reg_2 of module DFFRHQX1 <./uart_top_delays.sdf, line 274>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.baud.os_tick_cnt_reg_1 of module DFFRHQX1 <./uart_top_delays.sdf, line 321>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.baud.baud_tick_cnt_reg_3 of module DFFRHQX1 <./uart_top_delays.sdf, line 368>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.baud.baud_tick_cnt_reg_0 of module DFFRHQX1 <./uart_top_delays.sdf, line 389>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.baud.baud_tick_cnt_reg_1 of module DFFRHQX1 <./uart_top_delays.sdf, line 410>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.baud.baud_tick_cnt_reg_2 of module DFFRHQX1 <./uart_top_delays.sdf, line 431>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.baud.os_tick_reg of module DFFRHQX1 <./uart_top_delays.sdf, line 500>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.045)) of instance tb_uart_top.dut.baud.os_tick_cnt_reg_0 of module DFFRX1 <./uart_top_delays.sdf, line 533>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_irq.irq_reg of module DFFRHQX1 <./uart_top_delays.sdf, line 626>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_irq.st_reg_2 of module DFFRHQX1 <./uart_top_delays.sdf, line 647>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_irq.st_reg_3 of module DFFRHQX1 <./uart_top_delays.sdf, line 668>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_irq.st_reg_4 of module DFFRHQX1 <./uart_top_delays.sdf, line 689>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_irq.st_reg_5 of module DFFRHQX1 <./uart_top_delays.sdf, line 710>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_irq.ier_reg_0 of module DFFRHQX1 <./uart_top_delays.sdf, line 731>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_irq.ier_reg_2 of module DFFRHQX1 <./uart_top_delays.sdf, line 752>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_irq.ier_reg_1 of module DFFRHQX1 <./uart_top_delays.sdf, line 773>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_irq.ier_reg_4 of module DFFRHQX1 <./uart_top_delays.sdf, line 794>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_irq.ier_reg_3 of module DFFRHQX1 <./uart_top_delays.sdf, line 815>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_irq.ier_reg_5 of module DFFRHQX1 <./uart_top_delays.sdf, line 892>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.045)) of instance tb_uart_top.dut.u_irq.ev_d_reg_4 of module DFFRX1 <./uart_top_delays.sdf, line 1085>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.045)) of instance tb_uart_top.dut.u_irq.ev_d_reg_3 of module DFFRX1 <./uart_top_delays.sdf, line 1108>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.045)) of instance tb_uart_top.dut.u_irq.ev_d_reg_2 of module DFFRX1 <./uart_top_delays.sdf, line 1131>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.045)) of instance tb_uart_top.dut.u_irq.ev_d_reg_5 of module DFFRX1 <./uart_top_delays.sdf, line 1154>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_rx.rx_fifo.rd_ptr_reg_0 of module DFFRHQX1 <./uart_top_delays.sdf, line 5685>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_rx.rx_fifo.rd_ptr_reg_2 of module DFFRHQX1 <./uart_top_delays.sdf, line 5706>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_rx.rx_fifo.rd_ptr_reg_3 of module DFFRHQX1 <./uart_top_delays.sdf, line 5727>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_rx.rx_fifo.rd_ptr_reg_4 of module DFFRHQX1 <./uart_top_delays.sdf, line 5748>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_rx.rx_fifo.wr_ptr_reg_0 of module DFFRHQX1 <./uart_top_delays.sdf, line 5769>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_rx.rx_fifo.wr_ptr_reg_1 of module DFFRHQX1 <./uart_top_delays.sdf, line 5790>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_rx.rx_fifo.wr_ptr_reg_2 of module DFFRHQX1 <./uart_top_delays.sdf, line 5811>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_rx.rx_fifo.wr_ptr_reg_3 of module DFFRHQX1 <./uart_top_delays.sdf, line 5832>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_rx.rx_fifo.wr_ptr_reg_4 of module DFFRHQX1 <./uart_top_delays.sdf, line 5853>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.045)) of instance tb_uart_top.dut.u_rx.rx_fifo.rd_ptr_reg_1 of module DFFRX1 <./uart_top_delays.sdf, line 6466>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_rx.parity_err_reg of module DFFRHQX1 <./uart_top_delays.sdf, line 6501>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_rx.fifo_wr_en_reg of module DFFRHQX1 <./uart_top_delays.sdf, line 6522>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_rx.overrun_err_reg of module DFFRHQX1 <./uart_top_delays.sdf, line 6543>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_rx.frame_err_reg of module DFFRHQX1 <./uart_top_delays.sdf, line 6604>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge SN) (negedge CKN) (0.019)) of instance tb_uart_top.dut.u_rx.rx_sync2_reg of module DFFNSRX1 <./uart_top_delays.sdf, line 6740>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge SN) (negedge CKN) (0.019)) of instance tb_uart_top.dut.u_rx.rx_sync1_reg of module DFFNSRX1 <./uart_top_delays.sdf, line 6777>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge SN) (negedge CKN) (0.019)) of instance tb_uart_top.dut.u_rx.rx_sync0_reg of module DFFNSRX1 <./uart_top_delays.sdf, line 6876>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_rx.bit_cnt_reg_0 of module DFFRHQX1 <./uart_top_delays.sdf, line 6944>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_rx.bit_cnt_reg_1 of module DFFRHQX1 <./uart_top_delays.sdf, line 6965>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_rx.bit_cnt_reg_2 of module DFFRHQX1 <./uart_top_delays.sdf, line 6986>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_rx.fifo_wr_data_reg_0 of module DFFRHQX1 <./uart_top_delays.sdf, line 7007>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_rx.fifo_wr_data_reg_1 of module DFFRHQX1 <./uart_top_delays.sdf, line 7028>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_rx.fifo_wr_data_reg_2 of module DFFRHQX1 <./uart_top_delays.sdf, line 7049>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_rx.fifo_wr_data_reg_3 of module DFFRHQX1 <./uart_top_delays.sdf, line 7070>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_rx.fifo_wr_data_reg_4 of module DFFRHQX1 <./uart_top_delays.sdf, line 7091>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_rx.fifo_wr_data_reg_5 of module DFFRHQX1 <./uart_top_delays.sdf, line 7112>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_rx.fifo_wr_data_reg_6 of module DFFRHQX1 <./uart_top_delays.sdf, line 7133>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_rx.fifo_wr_data_reg_7 of module DFFRHQX1 <./uart_top_delays.sdf, line 7154>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_rx.rx_data_reg_reg_0 of module DFFRHQX1 <./uart_top_delays.sdf, line 7175>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_rx.rx_data_reg_reg_1 of module DFFRHQX1 <./uart_top_delays.sdf, line 7196>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_rx.rx_data_reg_reg_2 of module DFFRHQX1 <./uart_top_delays.sdf, line 7217>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_rx.rx_data_reg_reg_3 of module DFFRHQX1 <./uart_top_delays.sdf, line 7238>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_rx.rx_data_reg_reg_4 of module DFFRHQX1 <./uart_top_delays.sdf, line 7259>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_rx.rx_data_reg_reg_5 of module DFFRHQX1 <./uart_top_delays.sdf, line 7280>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_rx.rx_data_reg_reg_6 of module DFFRHQX1 <./uart_top_delays.sdf, line 7301>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_rx.rx_data_reg_reg_7 of module DFFRHQX1 <./uart_top_delays.sdf, line 7322>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_rx.rx_parity_bit_reg of module DFFRHQX1 <./uart_top_delays.sdf, line 7343>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_rx.sampling_cnt_reg_0 of module DFFRHQX1 <./uart_top_delays.sdf, line 7364>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_rx.sampling_cnt_reg_1 of module DFFRHQX1 <./uart_top_delays.sdf, line 7385>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_rx.sampling_cnt_reg_3 of module DFFRHQX1 <./uart_top_delays.sdf, line 7406>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_rx.state_reg_0 of module DFFRHQX1 <./uart_top_delays.sdf, line 7427>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_rx.state_reg_1 of module DFFRHQX1 <./uart_top_delays.sdf, line 7448>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_rx.vote_7_reg of module DFFRHQX1 <./uart_top_delays.sdf, line 7469>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_rx.vote_8_reg of module DFFRHQX1 <./uart_top_delays.sdf, line 7490>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.045)) of instance tb_uart_top.dut.u_rx.state_reg_2 of module DFFRX1 <./uart_top_delays.sdf, line 8361>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.045)) of instance tb_uart_top.dut.u_rx.sampling_cnt_reg_2 of module DFFRX1 <./uart_top_delays.sdf, line 8384>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_tx.tx_fifo.rd_ptr_reg_0 of module DFFRHQX1 <./uart_top_delays.sdf, line 12915>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_tx.tx_fifo.rd_ptr_reg_2 of module DFFRHQX1 <./uart_top_delays.sdf, line 12936>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_tx.tx_fifo.rd_ptr_reg_3 of module DFFRHQX1 <./uart_top_delays.sdf, line 12957>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_tx.tx_fifo.rd_ptr_reg_4 of module DFFRHQX1 <./uart_top_delays.sdf, line 12978>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_tx.tx_fifo.wr_ptr_reg_0 of module DFFRHQX1 <./uart_top_delays.sdf, line 12999>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_tx.tx_fifo.wr_ptr_reg_1 of module DFFRHQX1 <./uart_top_delays.sdf, line 13020>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_tx.tx_fifo.wr_ptr_reg_2 of module DFFRHQX1 <./uart_top_delays.sdf, line 13041>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_tx.tx_fifo.wr_ptr_reg_3 of module DFFRHQX1 <./uart_top_delays.sdf, line 13062>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_tx.tx_fifo.wr_ptr_reg_4 of module DFFRHQX1 <./uart_top_delays.sdf, line 13083>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.045)) of instance tb_uart_top.dut.u_tx.tx_fifo.rd_ptr_reg_1 of module DFFRX1 <./uart_top_delays.sdf, line 13696>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge SN) (negedge CKN) (0.019)) of instance tb_uart_top.dut.u_tx.tx_reg of module DFFNSRX1 <./uart_top_delays.sdf, line 13744>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_tx.tx_done_reg of module DFFRHQX1 <./uart_top_delays.sdf, line 13828>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_tx.tx_parity_bit_reg of module DFFRHQX1 <./uart_top_delays.sdf, line 14091>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_tx.state_reg_0 of module DFFRHQX1 <./uart_top_delays.sdf, line 14138>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_tx.tx_data_reg_reg_5 of module DFFRHQX1 <./uart_top_delays.sdf, line 14185>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_tx.tx_data_reg_reg_1 of module DFFRHQX1 <./uart_top_delays.sdf, line 14206>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_tx.tx_data_reg_reg_2 of module DFFRHQX1 <./uart_top_delays.sdf, line 14227>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_tx.tx_data_reg_reg_3 of module DFFRHQX1 <./uart_top_delays.sdf, line 14248>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_tx.tx_data_reg_reg_4 of module DFFRHQX1 <./uart_top_delays.sdf, line 14269>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_tx.tx_data_reg_reg_6 of module DFFRHQX1 <./uart_top_delays.sdf, line 14290>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_tx.tx_data_reg_reg_0 of module DFFRHQX1 <./uart_top_delays.sdf, line 14311>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_tx.tx_data_reg_reg_7 of module DFFRHQX1 <./uart_top_delays.sdf, line 14346>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.046)) of instance tb_uart_top.dut.u_tx.state_reg_1 of module DFFRHQX1 <./uart_top_delays.sdf, line 14391>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.045)) of instance tb_uart_top.dut.u_tx.bit_cnt_reg_1 of module DFFRX1 <./uart_top_delays.sdf, line 14908>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.045)) of instance tb_uart_top.dut.u_tx.bit_cnt_reg_0 of module DFFRX1 <./uart_top_delays.sdf, line 14931>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.045)) of instance tb_uart_top.dut.u_tx.bit_cnt_reg_2 of module DFFRX1 <./uart_top_delays.sdf, line 14954>.
+xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (REMOVAL (posedge RN) (posedge CK) (0.045)) of instance tb_uart_top.dut.u_tx.state_reg_2 of module DFFRX1 <./uart_top_delays.sdf, line 14977>.
+xmelab: *W,SDFNDP: Annotation resulted in a negative delay value or pulse limit to specify path or interconnect delay ((IOPATH PAD Y)), setting to 0 <./uart_top_delays.sdf, line 15005>.

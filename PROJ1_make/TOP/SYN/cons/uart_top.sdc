@@ -100,13 +100,13 @@ set_operating_conditions  -max_library [get_libs slow_vdd1v0_basicCells.lib:slow
 #   ETC ATTRIBUTES                #
 #                                 #
 ###################################
-
 #set_dont_touch u_cmsdk_mcu_system
 #set_dont_touch pad1 
 #set_dont_touch pad2 
 #set_dont_touch pad3 
 #set_dont_touch pad4 
 #set_dont_touch pad75 
+
 
 # Below is no use in Genus tool
 #set_isolate_ports [all_outputs]
