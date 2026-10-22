@@ -22,13 +22,13 @@ reset_design
 #############################
 # Below is CLOCK SPEED 
 # Original Speed is 10ns and 80% adoptation is needed to ensure the stability of the chip
-create_clock -period 3 -name MAIN_CLOCK [get_ports clk]
+create_clock -period 8 -name MAIN_CLOCK [get_ports clk]
 
 # External clock source and network latency is 0.2ns 
 set_clock_latency -source -max 0.2 [get_clocks MAIN_CLOCK] 
 set_clock_latency -max 0.2 [get_clocks MAIN_CLOCK]
 
-# 60ps skew (+300ps and -300ps) 
+# 60ps skew (+30ps and -30ps) 
 # 20ps jitter 
 # 20ps setup margin;
 # This equals 0.1 ns of total uncertainty.
@@ -51,13 +51,21 @@ set_clock_transition 0.1 [get_clocks MAIN_CLOCK]
 ##############################
 ##### input, output delay ####
 ##############################
-set_input_delay -max 0.1 -clock MAIN_CLOCK [all_inputs]
-set_input_delay -min 0.01 -clock MAIN_CLOCK [all_inputs]
+#set_input_delay -max 0.1 -clock MAIN_CLOCK [all_inputs]
+#set_input_delay -min 0.01 -clock MAIN_CLOCK [all_inputs]
+set_input_delay -max 0.1  -clock MAIN_CLOCK [remove_from_collection [all_inputs] [get_ports clk]]
+set_input_delay -min 0.01 -clock MAIN_CLOCK [remove_from_collection [all_inputs] [get_ports clk]]
 
 # remove_input_delay [get_ports "XTAL1"]
 
 set_output_delay -max 0.1 -clock MAIN_CLOCK [all_outputs]
 set_output_delay -min -0.01 -clock MAIN_CLOCK [all_outputs]
+
+##############################
+###  Async serial IO (PAD) ###
+##############################
+set_false_path -from [get_ports rx]
+set_false_path -to   [get_ports tx]
 
 ##############################
 #   DESIGN AREA              #
@@ -71,10 +79,14 @@ set_output_delay -min -0.01 -clock MAIN_CLOCK [all_outputs]
 #set_driving_cell -lib_cell DFFHQX1 -pin Q [remove_from_collection [all_inputs] [get_ports clk]]
 
 #set_driving_cell -lib_cell PADDI -pin Y -library [get_libs $STD_LIB_slow] [remove_from_collection [all_inputs] [get_ports XTAL1]]
-set_driving_cell -lib_cell PADDI -pin Y -library [get_libs $STD_LIB_slow] [remove_from_collection [all_inputs] [get_ports clk]]
+#set_driving_cell -lib_cell PADDI -pin Y -library [get_libs $STD_LIB_slow] [remove_from_collection [all_inputs] [get_ports clk]]
+set_driving_cell -lib_cell PADDI -pin Y [remove_from_collection [all_inputs] [get_ports {clk rx}]]
+set_input_transition 0.5 [get_ports rx]
 
 #set_load [load_of $STD_LIB/PADDO/A] [get_ports {TDO XTAL2}]
-set_load [load_of PADDO/A] [all_outputs]
+#set_load [load_of PADDO/A] [all_outputs]
+set_load [load_of PADDO/A] [remove_from_collection [all_outputs] [get_ports tx]]
+set_load 5 [get_ports tx]
 
 ##############################
 ##### Operating Condition ####
@@ -92,7 +104,7 @@ set_load [load_of PADDO/A] [all_outputs]
 ########################
 # operating conditions are define automatically when genus reads libraries with the command 'read_libs'
 # So, below command is no useful in case of the single analysis type
-set_operating_conditions  -max_library [get_libs slow_vdd1v0_basicCells.lib:slow_vdd1v0] -max PVT_0P9V_125C -min_library [get_libs fast_vdd1v0_basicCells.lib:fast_vdd1v0] -min PVT_1P1V_0C
+#set_operating_conditions  -max_library [get_libs slow_vdd1v0_basicCells.lib:slow_vdd1v0] -max PVT_0P9V_125C -min_library [get_libs fast_vdd1v0_basicCells.lib:fast_vdd1v0] -min PVT_1P1V_0C
 
 
 ###################################

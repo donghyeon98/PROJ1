@@ -2,10 +2,6 @@
 #       Setting dont_touch and dont_use preserve setting
 ################################################################################
 catch {set_db base_cell:ANTENNA .dont_use true}
-catch {set_db base_cell:DFFSHQX1 .dont_use true}
-catch {set_db base_cell:DFFSHQX2 .dont_use true}
-catch {set_db base_cell:DFFSHQX4 .dont_use true}
-catch {set_db base_cell:DFFSHQX8 .dont_use true}
 catch {set_db base_cell:DFFSRHQX1 .dont_use true}
 catch {set_db base_cell:DFFSRHQX2 .dont_use true}
 catch {set_db base_cell:DFFSRHQX4 .dont_use true}
@@ -14,10 +10,6 @@ catch {set_db base_cell:DFFSRX1 .dont_use true}
 catch {set_db base_cell:DFFSRX2 .dont_use true}
 catch {set_db base_cell:DFFSRX4 .dont_use true}
 catch {set_db base_cell:DFFSRXL .dont_use true}
-catch {set_db base_cell:DFFSX1 .dont_use true}
-catch {set_db base_cell:DFFSX2 .dont_use true}
-catch {set_db base_cell:DFFSX4 .dont_use true}
-catch {set_db base_cell:DFFSXL .dont_use true}
 catch {set_db base_cell:DLY1X1 .dont_use true}
 catch {set_db base_cell:DLY1X4 .dont_use true}
 catch {set_db base_cell:DLY2X1 .dont_use true}
@@ -105,3 +97,5 @@ catch {set_db base_cell:TLATX1 .dont_use true}
 catch {set_db base_cell:TLATX2 .dont_use true}
 catch {set_db base_cell:TLATX4 .dont_use true}
 catch {set_db base_cell:TLATXL .dont_use true}
+catch {set_db inst:uart_top/rm_assigns_buf_rx_valid .dont_touch size_delete_ok}
+catch {set_db inst:uart_top/rm_assigns_buf_tx_empty .dont_touch size_delete_ok}

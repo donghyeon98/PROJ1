@@ -231,9 +231,9 @@ add mapped point u_rx/rx_fifo/wr_ptr[1]/q u_rx/rx_fifo/wr_ptr_reg_1/Q -type DFF 
 add mapped point u_rx/rx_fifo/wr_ptr[2]/q u_rx/rx_fifo/wr_ptr_reg_2/Q -type DFF DFF
 add mapped point u_rx/rx_fifo/wr_ptr[3]/q u_rx/rx_fifo/wr_ptr_reg_3/Q -type DFF DFF
 add mapped point u_rx/rx_fifo/wr_ptr[4]/q u_rx/rx_fifo/wr_ptr_reg_4/Q -type DFF DFF
-add mapped point u_rx/parity_err/q u_rx/parity_err_reg/Q -type DFF DFF
-add mapped point u_rx/fifo_wr_en/q u_rx/fifo_wr_en_reg/Q -type DFF DFF
 add mapped point u_rx/overrun_err/q u_rx/overrun_err_reg/Q -type DFF DFF
+add mapped point u_rx/fifo_wr_en/q u_rx/fifo_wr_en_reg/Q -type DFF DFF
+add mapped point u_rx/parity_err/q u_rx/parity_err_reg/Q -type DFF DFF
 add mapped point u_rx/frame_err/q u_rx/frame_err_reg/Q -type DFF DFF
 add mapped point u_rx/rx_sync2/q u_rx/rx_sync2_reg/Q -type DFF DFF
 add mapped point u_rx/rx_sync1/q u_rx/rx_sync1_reg/Q -type DFF DFF
@@ -408,19 +408,19 @@ add mapped point u_tx/tx_fifo/wr_ptr[4]/q u_tx/tx_fifo/wr_ptr_reg_4/Q -type DFF 
 add mapped point u_tx/tx/q u_tx/tx_reg/Q -type DFF DFF
 add mapped point u_tx/tx_done/q u_tx/tx_done_reg/Q -type DFF DFF
 add mapped point u_tx/tx_parity_bit/q u_tx/tx_parity_bit_reg/Q -type DFF DFF
-add mapped point u_tx/state[0]/q u_tx/state_reg_0/Q -type DFF DFF
-add mapped point u_tx/bit_cnt[2]/q u_tx/bit_cnt_reg_2/Q -type DFF DFF
-add mapped point u_tx/tx_data_reg[5]/q u_tx/tx_data_reg_reg_5/Q -type DFF DFF
 add mapped point u_tx/tx_data_reg[1]/q u_tx/tx_data_reg_reg_1/Q -type DFF DFF
-add mapped point u_tx/tx_data_reg[2]/q u_tx/tx_data_reg_reg_2/Q -type DFF DFF
 add mapped point u_tx/tx_data_reg[3]/q u_tx/tx_data_reg_reg_3/Q -type DFF DFF
 add mapped point u_tx/tx_data_reg[4]/q u_tx/tx_data_reg_reg_4/Q -type DFF DFF
 add mapped point u_tx/tx_data_reg[6]/q u_tx/tx_data_reg_reg_6/Q -type DFF DFF
 add mapped point u_tx/tx_data_reg[0]/q u_tx/tx_data_reg_reg_0/Q -type DFF DFF
+add mapped point u_tx/tx_data_reg[2]/q u_tx/tx_data_reg_reg_2/Q -type DFF DFF
 add mapped point u_tx/tx_data_reg[7]/q u_tx/tx_data_reg_reg_7/Q -type DFF DFF
+add mapped point u_tx/tx_data_reg[5]/q u_tx/tx_data_reg_reg_5/Q -type DFF DFF
+add mapped point u_tx/state[0]/q u_tx/state_reg_0/Q -type DFF DFF
 add mapped point u_tx/bit_cnt[1]/q u_tx/bit_cnt_reg_1/Q -type DFF DFF
-add mapped point u_tx/bit_cnt[0]/q u_tx/bit_cnt_reg_0/Q -type DFF DFF
+add mapped point u_tx/bit_cnt[2]/q u_tx/bit_cnt_reg_2/Q -type DFF DFF
 add mapped point u_tx/state[1]/q u_tx/state_reg_1/Q -type DFF DFF
+add mapped point u_tx/bit_cnt[0]/q u_tx/bit_cnt_reg_0/Q -type DFF DFF
 add mapped point u_tx/state[2]/q u_tx/state_reg_2/Q -type DFF DFF
 
 

@@ -25,8 +25,9 @@ set RTL_PATH     "../RTL"
 set QRC_FILE_PATH "/GPDK045/digital/gsclib045_all_v4.4/gsclib045_tech/qrc/qx"
 
 #GPDK 045 SVT
-set LIB_LIST {fast_vdd1v0_basicCells.lib slow_vdd1v0_basicCells.lib pads_SS_s1vg.lib}
+#set LIB_LIST {fast_vdd1v0_basicCells.lib slow_vdd1v0_basicCells.lib pads_SS_s1vg.lib}
 #set LIB_LIST {slow_vdd1v0_basicCells.lib slow_vdd1v0_multibitsDFF.lib pads_SS_s1vg.lib}
+set LIB_LIST {slow_vdd1v0_basicCells.lib pads_SS_s1vg.lib}
 set LEF_LIST {gsclib045_tech.lef gsclib045_macro.lef giolib045.lef}
 set QRC_LIST {gpdk045.tch}
 
@@ -55,6 +56,8 @@ read_qrc ${QRC_LIST}
 ##generates <signal>_reg[<bit_width>] format
 set_db hdl_array_naming_style %s_%d
 set_db / .uniquify_naming_style ${TOP_DESIGN}_%s_%d
+set_db hdl_track_filename_row_col true
+set_db remove_assigns true
 
 ####################################################################
 ## Load Design
@@ -87,6 +90,11 @@ source -verbose  ./cons/uart_top.sdc     ; #This command can't write report by u
 source -verbose  ./cons/dont_use_45nm.tcl ; #This command can't write report by using the mark '>'
 puts "The number of exceptions is [llength [vfind "design:$TOP_DESIGN" -exception *]]"
 #set_db "design:$DESIGN" .force_wireload <wireload name> 
+
+puts "==== async-set DFF dont_use status ===="
+foreach c [get_db lib_cells *DFFS*] {
+  puts "  [get_db $c .base_name] : dont_use=[get_db $c .dont_use]"
+}
 
 check_timing_intent -verbose > ${RPT_DIR}/01_check_timing_intent.rpt
 
@@ -179,7 +187,8 @@ report_messages -all                      > ${RPT_DIR}/16_${TOP_DESIGN}_SYN_mess
 report_nets -hierarchical                 > ${RPT_DIR}/17_${TOP_DESIGN}_SYN_net.rpt 
 report_power                              > ${RPT_DIR}/18_${TOP_DESIGN}_SYN_pwr.rpt
 report_qor                                > ${RPT_DIR}/19_${TOP_DESIGN}_SYN_qor.rpt 
-report_timing -nworst 100 -net            > ${RPT_DIR}/20_${TOP_DESIGN}_SYN_timing.rpt 
+report_timing -nworst 100 -net            > ${RPT_DIR}/20_${TOP_DESIGN}_SYN_timing.rpt
+report_timing -unconstrained -max_paths 20 > ${RPT_DIR}/21_${TOP_DESIGN}_SYN_unconstrained.rpt 
 report_summary 			          
 
 

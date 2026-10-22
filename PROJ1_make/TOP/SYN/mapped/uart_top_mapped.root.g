@@ -1,15 +1,12 @@
 ######################################################################
 
-# Created by Genus(TM) Synthesis Solution 22.17-s071_1 on Wed Oct 21 01:46:34 KST 2026
+# Created by Genus(TM) Synthesis Solution 22.17-s071_1 on Fri Oct 23 01:51:53 KST 2026
 
 # This file contains the Genus script for design:uart_top
 
 ######################################################################
 
 set_db -quiet init_lib_search_path {/GPDK045/digital/gsclib045_all_v4.4/gsclib045/timing /GPDK045/digital/giolib045_v3.5/timing /GPDK045/digital/gsclib045_all_v4.4/gsclib045/lef /GPDK045/digital/giolib045_v3.5/lef /GPDK045/digital/gsclib045_all_v4.4/gsclib045_tech/qrc/qx}
-set_db -quiet operating_conditions_min PVT_1P1V_0C
-set_db -quiet operating_conditions_min_library library:default_emulate_libset_max/fast_vdd1v0
-set_db -quiet operating_conditions_library_given true
 set_db -quiet design_mode_process 60.0
 set_db -quiet phys_assume_met_fill 0.0
 set_db -quiet map_placed_for_route_early_global false
@@ -18,7 +15,7 @@ set_db -quiet phys_route_time_out 120.0
 set_db -quiet db_units 2000
 set_db -quiet capacitance_per_unit_length_mmmc {}
 set_db -quiet resistance_per_unit_length_mmmc {}
-set_db -quiet runtime_by_stage {{PBS_Generic-Start 0 19 0.0 17.989267} {to_generic 5 25 5 23} {first_condense 4 29 4 28} {PBS_Generic_Opt-Post 10 29 9.951003 27.94027} {{PBS_Generic-Postgen HBO Optimizations} 0 29 0.0 27.94027} {PBS_TechMap-Start 0 31 0.0 28.88789} {{PBS_TechMap-Premap HBO Optimizations} 0 32 0.0 28.88789} {second_condense 2 34 3 34} {reify 6 40 7 41} {global_incr_map 1 41 1 43} {{PBS_Techmap-Global Mapping} 9 41 9.514349000000003 38.402239} {{PBS_TechMap-Datapath Postmap Operations} 2 43 1.98386 40.386099} {{PBS_TechMap-Postmap HBO Optimizations} 0 43 -0.017634000000001038 40.368465} {{PBS_TechMap-Postmap Clock Gating} 0 43 0.0 40.368465} {{PBS_TechMap-Postmap Cleanup} 0 43 0.9816429999999983 41.350108} {PBS_Techmap-Post_MBCI 0 43 0.0 41.350108} {incr_opt 3 48 2 49} }
+set_db -quiet runtime_by_stage {{PBS_Generic-Start 0 18 0.0 16.980901} {to_generic 5 24 5 22} {first_condense 4 28 4 27} {PBS_Generic_Opt-Post 10 28 9.708599 26.6895} {{PBS_Generic-Postgen HBO Optimizations} 0 28 0.0 26.6895} {PBS_TechMap-Start 0 31 0.0 27.639146} {{PBS_TechMap-Premap HBO Optimizations} 0 31 0.0 27.639146} {second_condense 3 34 4 34} {reify 5 39 7 41} {global_incr_map 1 40 1 42} {{PBS_Techmap-Global Mapping} 9 40 10.560605999999996 38.199752} {{PBS_TechMap-Datapath Postmap Operations} 3 43 1.9816819999999993 40.181433999999996} {{PBS_TechMap-Postmap HBO Optimizations} 0 43 -0.017169000000002654 40.16426499999999} {{PBS_TechMap-Postmap Clock Gating} 0 43 0.0 40.16426499999999} {{PBS_TechMap-Postmap Cleanup} 0 43 -0.018287999999998306 40.145976999999995} {PBS_Techmap-Post_MBCI 0 43 0.0 40.145976999999995} {incr_opt 4 49 3 49} }
 set_db -quiet timing_adjust_tns_of_complex_flops false
 set_db -quiet hdl_array_naming_style %s_%d
 set_db -quiet tinfo_tstamp_file .rs_hah001.tstamp
@@ -28,6 +25,8 @@ set_db -quiet max_cpus_per_server 2
 set_db -quiet syn_generic_effort high
 set_db -quiet use_area_from_lef true
 set_db -quiet uniquify_naming_style uart_top_%s_%d
+set_db -quiet hdl_track_filename_row_col true
+set_db -quiet remove_assigns true
 set_db -quiet optimize_merge_flops false
 set_db -quiet optimize_merge_latches false
 set_db -quiet source_verbose true
@@ -36,7 +35,7 @@ set_db -quiet source_verbose true
 ##
 ## Written by Genus(TM) Synthesis Solution version 22.17-s071_1
 ## flowkit v22.15-s003_1
-## Written on 01:46:34 21-Oct 2026
+## Written on 01:51:54 23-Oct 2026
 #############################################################
 #####   Flow Definitions   ##################################
 

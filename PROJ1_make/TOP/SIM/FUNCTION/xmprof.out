@@ -529,22 +529,26 @@ xmelab options:
 
 Profiled Intervals: 
  #Id                                PBSR Info               #start                  #stop             #start_CPU          #stop_CPU               #CPS
-[ 1]                                                          0 NS   to        2540745 NS                 0.1526            30.7721         82978.1451
+[ 1]                                                          0 NS   to        1685385 NS                 0.1227            21.3245         79492.5431
 
-Memory Usage - 46.8M program + 62.5M data + 2.0M profile = 111.2M total
-CPU Usage - 20.8s system + 10.3s user = 31.0s total (2.0% cpu)
+Memory Usage - 46.8M program + 74.5M data + 2.0M profile = 123.3M total
+CPU Usage - 14.7s system + 6.9s user = 21.6s total (2.2% cpu)
 
 License Acquisition Time - 0.0s
-Snapshot Loading: CPU Usage - 0.1s system + 0.1s user = 0.1s total (8.0s, 1.6% cpu)
+Snapshot Loading: CPU Usage - 0.0s system + 0.1s user = 0.1s total (6.9s, 1.5% cpu)
 
-Derived hit_rate: 460 hps
+Derived hit_rate: 439 hps
 
 ------------------------------------------------------------
-Stream Counts (14086 hits total)
+Stream Counts (9327 hits total)
 ------------------------------------------------------------
 %hits #hits  #inst  name
- 99.4 13996 [     ] outside engine
-  0.2    27 [     ] VCD Waveform Dump
+ 98.1  9149 [     ] outside engine
+  0.5    46 [     ] SHM Waveform Dump
+  0.3    24 [     ] VCD Waveform Dump
+  0.1    11 [     ] ssslib pvscheck
+  0.1    10 [     ] Method SSS_KM_CL2TA (method)
+  0.1    10 [     ] ssslib snare support
 
 ------------------------------------------------------------
 Most Active Modules (behavioral)
@@ -552,29 +556,29 @@ Most Active Modules (behavioral)
 %hits #hits  #inst  name
 
 ------------------------------------------------------------
-Stream Type Summary Counts (14086 hits total)
+Stream Type Summary Counts (9327 hits total)
 ------------------------------------------------------------
 %hits #hits  #inst  name
- 99.4 13996 [     ] Outside engine 
-  0.2    29 [     ] Waveform Dump 
-  0.1    21 [     ] Simulation Engine Time 
-  0.1    14 [     ] General tracing support (VCD/SHM/VPI/UI) 
-  0.1     9 [     ] HDL C interface 
-  0.0     5 [   19] Always statements 
-  0.0     3 [    3] Initial statements 
-  0.0     2 [   55] Non-blocking assignments 
-  0.0     2 [     ] Engine support 
+ 98.1  9149 [     ] Outside engine 
+  0.8    79 [     ] Waveform Dump 
+  0.3    28 [     ] Simulation Engine Time 
+  0.2    23 [     ] HDL C interface 
+  0.2    17 [     ] General tracing support (VCD/SHM/VPI/UI) 
+  0.1    10 [     ] Support for callbacks (or UI) 
+  0.1     8 [    3] Initial statements 
+  0.0     4 [     ] TCL Functions 
+  0.0     3 [     ] Engine support 
+  0.0     3 [     ] Gate Evaluation Methods 
   0.0     2 [     ] Simulation Setup Time 
-  0.0     1 [   14] Anonymous continuous assignments 
-  0.0     1 [     ] Support for callbacks (or UI) 
-  0.0     1 [     ] Gate Evaluation Methods 
+  0.0     1 [   49] Non-blocking assignments 
 
 ------------------------------------------------------------
-Technology-wise Summary Counts (14086 hits total)
+Technology-wise Summary Counts (9327 hits total)
 ------------------------------------------------------------
 %hits #hits  name
- 99.5 14021 Miscellaneous 
-  0.4    53 Analysis 
-  0.1    11 RTL/Design 
-  0.0     1 GLS 
+ 98.4  9182 Miscellaneous 
+  1.4   129 Analysis 
+  0.1     9 RTL/Design 
+  0.0     4 TB/SV 
+  0.0     3 GLS 
 

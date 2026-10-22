@@ -37,10 +37,13 @@ module tb_uart_top								;
 
 	integer i				      				;
 
-        uart_top #(.FPGA_CLK    (FPGA_CLK)                                      ,
-                   .BAUD_RATE   (BAUD_RATE)                                     ,
-                   .DATA_WIDTH  (DATA_WIDTH)                                    ,
-                   .DEPTH       (DEPTH))
+        uart_top 
+	`ifdef function_sim
+	#(.FPGA_CLK    (FPGA_CLK)                                      		,
+          .BAUD_RATE   (BAUD_RATE)                                     		,
+          .DATA_WIDTH  (DATA_WIDTH)                                    		,
+          .DEPTH       (DEPTH))		
+	`endif
 	
 	dut	  								(	
         .clk			(clk)                   			,
@@ -157,6 +160,7 @@ module tb_uart_top								;
 		drain_rx							;
 
 		//case2 3byte data
+		ier_write(6'b00_0101);
 		for (i = 0; i < 3; i = i + 1) begin
                         case (i)
                                 0       : send_byte(8'b0011_0011)		;
@@ -187,8 +191,9 @@ module tb_uart_top								;
 		isr_clear(6'b01_0000)						;  
 		isr_clear(6'b00_0100)						;
 		repeat (2*BIT_PERIOD) @(posedge clk)				;
-		
+
 		//case4 frame_err
+		ier_write(6'b11_1101);
 		send_byte(8'b1010_0101)						;
 		wait (dut.u_tx.state == 3'b100)					;
 		force dut.u_tx.tx = 1'b0					;
@@ -202,6 +207,7 @@ module tb_uart_top								;
 
 
 		//case5 overrun_err
+		ier_write(6'b11_1101);
 		for (i = 0; i < DEPTH + 1; i = i + 1)
                         send_byte(i[DATA_WIDTH-1:0])				;
                 repeat ((DEPTH + 1) * FRAME + 3*BIT_PERIOD) @(posedge clk)	;
